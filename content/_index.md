@@ -4,9 +4,17 @@ draft: true
 title: ''
 ---
 
+{{< hextra/hero-section heading="h1" >}}
+vOps Lab
+{{< /hextra/hero-section >}}
+
+{{< hextra/hero-section heading="h4" >}}
+_Powered by technophiles._
+{{< /hextra/hero-section >}}
+
+
 {{< hextra/hero-section heading="h3" >}}
-A platform for DevOps & Security folks. 
-Powered by techholics.  
+a platform for devops & security folks.  
 {{< /hextra/hero-section >}}
 
 {{< hextra/hero-subtitle >}}
@@ -14,7 +22,7 @@ Powered by techholics.
 {{< /hextra/hero-subtitle >}}
 
 ---
-{{< hextra/hero-button text="Explore" link="/tutorial" >}}
+{{< hextra/hero-button text="Explore Labs" link="/tutorial" >}}
 
 ---
 {{< hextra/feature-card title="Title" subtitle="Subtitle" >}}

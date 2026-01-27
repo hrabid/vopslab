@@ -78,23 +78,23 @@ menu:
       url: "https://github.com/hrabid/"
       params:
         icon: github
-# sidebar:
-#     - identifier: more
-#       name: More
-#       params:
-#         type: separator
-#       weight: 1
-#     - identifier: about
-#       name: "About"
-#       pageRef: "/about"
-#       weight: 2
-#     - identifier: hugoDocs
-#       name: "Hugo Docs ↗"
-#       url: "https://gohugo.io/documentation/"
-#       weight: 3
+  # sidebar:
+  #   - identifier: more
+  #     name: More
+  #     params:
+  #       type: separator
+  #     weight: 1
+  #   - identifier: about
+  #     name: "About"
+  #     pageRef: "/about"
+  #     weight: 2
+  #   - identifier: hugoDocs
+  #     name: "Hugo Docs ↗"
+  #     url: "https://gohugo.io/documentation/"
+  #     weight: 3
 
 params:
-  description: A platform for DevOps & Security folks. Powered by techholics.  
+  description: "" 
 
   externalLinkDecoration: true
 
@@ -121,7 +121,7 @@ params:
 
   footer:
     enable: true
-    displayCopyright: false 
+    displayCopyright: false
     displayPoweredBy: false
     width: normal
 
@@ -159,6 +159,7 @@ params:
       displayPagination: true
 
   toc:
+    displayToc: true
     displayTags: true
 
   highlight:
