@@ -14,9 +14,10 @@ authors:
 sidebar:
   exclude: false
 toc: true
+comments: true
 ---
 ![](/images/markdown-mark-white.png)
-# Markdown Tutorial
+
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by **John Gruber** in 2004, Markdown is now one of the world’s most popular markup languages. It is widely used for formatting readme files, writing messages in online discussion forums, and creating rich text using a plain text editor.
 
 This tutorial will cover everything you need to know about Markdown, from basic syntax to advanced features. Let's dive in!

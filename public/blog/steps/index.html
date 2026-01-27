@@ -47,7 +47,7 @@ Configs
 
 <meta
   property="article:modified_time"
-  content="2026-01-27T06:50:51+00:00">
+  content="2026-01-27T15:09:18+06:00">
 
 
 
@@ -55,7 +55,7 @@ Configs
   <meta itemprop="description" content="Installation This is the first step.
 sudo dnf install hugo Configs This is the second step.">
   <meta itemprop="datePublished" content="2026-01-27T06:50:51+00:00">
-  <meta itemprop="dateModified" content="2026-01-27T06:50:51+00:00">
+  <meta itemprop="dateModified" content="2026-01-27T15:09:18+06:00">
   <meta itemprop="wordCount" content="16">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Steps">
@@ -354,13 +354,87 @@ sudo dnf install hugo Configs This is the second step.">
 </div>
 
         </div>
-    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">Last updated on <time datetime="2026-01-27T06:50:51.000Z">January 27, 2026</time></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">Last updated on <time datetime="2026-01-27T15:09:18.000Z">January 27, 2026</time></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
         href="/blog/markdown-syntax/"
         title="Markdown Syntax"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
       ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Markdown Syntax</a></div>
   
-</main>
+<script>
+  function getGiscusTheme() {
+    const giscusTheme = 'transparent_dark';
+    if (giscusTheme === 'light' || giscusTheme === 'dark') {
+      return giscusTheme;
+    }
+
+    const hugoTheme = localStorage.getItem("color-theme");
+    if (hugoTheme === 'light' || hugoTheme === 'dark') {
+      return hugoTheme;
+    }
+
+    if (hugoTheme === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    const defaultTheme = 'system';
+    if (defaultTheme === 'light' || defaultTheme === 'dark') {
+      return defaultTheme;
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function setGiscusTheme() {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+
+    const msg = {
+      giscus: {
+        setConfig: {
+          theme: getGiscusTheme(),
+        },
+      },
+    }
+
+    iframe.contentWindow.postMessage(msg, 'https://giscus.app');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const giscusAttributes = {
+      "src": "https://giscus.app/client.js",
+      "data-repo": "hrabid\/vopslab",
+      "data-repo-id": "R_kgDORCGLJA",
+      "data-category": "General",
+      "data-category-id": "DIC_kwDORCGLJM4C1fKK",
+      "data-mapping": "pathname",
+      "data-strict": "0",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "0",
+      "data-input-position": "top",
+      "data-theme": getGiscusTheme(),
+      "data-lang": "en",
+      "crossorigin": "anonymous",
+      "async": "",
+    };
+
+    
+    const giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    
+    document.getElementById('giscus-hextra-bb112b9f807c37c1752e5da6a1652a29').appendChild(giscusScript);
+
+    
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setGiscusTheme);
+
+    
+    const themeToggleOptions = document.querySelectorAll(".hextra-theme-toggle-options p");
+    if (themeToggleOptions) {
+      themeToggleOptions.forEach(toggle => toggle.addEventListener('click', setGiscusTheme));
+    }
+  });
+</script>
+
+<div id="giscus-hextra-bb112b9f807c37c1752e5da6a1652a29"></div></main>
     </article>
   </div>
 

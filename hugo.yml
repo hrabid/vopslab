@@ -187,19 +187,18 @@ params:
     enable: true
 
   comments:
-    enable: false
+    enable: true 
     type: giscus
-
     # https://giscus.app/
-    # giscus:
-    #   repo: imfing/hextra
-    #   repoId: R_kgDOJ9fJag
-    #   category: General
-    #   categoryId: DIC_kwDOJ9fJas4CY7gW
-      # mapping: pathname
-      # strict: 0
-      # reactionsEnabled: 1
-      # emitMetadata: 0
-      # inputPosition: top
-      # lang: en
-      # theme: noborder_dark
+    giscus:
+      repo: hrabid/vopslab
+      repoId: "R_kgDORCGLJA"
+      category: "General"
+      categoryId: "DIC_kwDORCGLJM4C1fKK"
+      mapping: pathname
+      strict: 0
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: top
+      lang: en
+      theme: transparent_dark
