@@ -6,8 +6,12 @@ tags:
   - docs
 title: Markdown Syntax
 summary: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by **John Gruber** in 2004, Markdown is now one of the world’s most popular markup languages.
+author: 'Habib R. Abid'
+sidebar:
+  exclude: false
+toc: true
 ---
-![](/markdown.png)
+![](/images/markdown-mark-white.png)
 # Markdown Tutorial
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by **John Gruber** in 2004, Markdown is now one of the world’s most popular markup languages. It is widely used for formatting readme files, writing messages in online discussion forums, and creating rich text using a plain text editor.
 
@@ -278,5 +282,4 @@ Here are some popular Markdown editors and tools:
 2. **Use Consistent Formatting**: Stick to one style for headings, lists, and other elements.
 3. **Preview Your Work**: Always preview your Markdown to ensure it renders correctly.
 4. **Use Comments Sparingly**: Markdown doesn’t support comments, but some processors allow HTML comments (`<!-- comment -->`).
-5
 
