@@ -1,0 +1,436 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vOps Lab – Git</title>
+    <link>//localhost:1313/tags/git/</link>
+    <description>Recent content in Git on vOps Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Jan 2026 16:30:00 +0000</lastBuildDate>
+    
+	  <atom:link href="//localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Anatomy of dot_git/ Directory</title>
+      <link>//localhost:1313/blog/anatomy-of-dot_git-directory/</link>
+      <pubDate>Wed, 28 Jan 2026 16:30:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/blog/anatomy-of-dot_git-directory/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;File System Hierarchy of &lt;code&gt;.git/&lt;/code&gt; directory&lt;/h1&gt;&lt;div class=&#34;hextra-filetree hx:mt-6 hx:select-none hx:text-sm hx:text-gray-800 hx:dark:text-gray-300 not-prose&#34;&gt;
+  &lt;div class=&#34;hx:inline-block hx:rounded-lg hx:px-4 hx:py-2 hx:border hx:border-gray-200 hx:dark:border-neutral-800&#34;&gt;
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+  &lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+    &lt;span data-state=&#34;open&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;span data-state=&#34;open&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;.git&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul data-state=&#34;open&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+  &lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+    &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;COMMIT_EDITMSG&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/li&gt;
+
+  &lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+    &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;config&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/li&gt;
+
+  &lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+    &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;description&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/li&gt;
+
+  &lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+    &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;HEAD&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/li&gt;
+
+
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;hooks&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+  &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;*.sample&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+  &lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+    &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;index&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/li&gt;
+
+
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;info&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+  &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;exclude&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;logs&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+  &lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;HEAD&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;refs&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;heads&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+&lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;master&lt;/span&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;remotes&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;origin&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+&lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;master&lt;/span&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;modules&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;objects&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;2c&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;info&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;pack&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+  
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;refs&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;heads&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+&lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;master&lt;/span&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;remote&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;origin&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;li class=&#34;hx:flex hx:list-none&#34;&gt;
+&lt;span class=&#34;hx:inline-flex hx:cursor-default hx:items-center hx:py-1&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;master&lt;/span&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class=&#34;hx:group hx:flex hx:list-none hx:flex-col&#34;&gt;
+&lt;button class=&#34;hextra-filetree-folder hx:inline-flex hx:cursor-pointer hx:items-center hx:py-1 hx:hover:opacity-60&#34;&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=open]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span data-state=&#34;closed&#34; class=&#34;hx:data-[state=closed]:hidden&#34;&gt;&lt;svg width=1em xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&#34;hx:ltr:ml-1 hx:rtl:mr-1&#34;&gt;tags&lt;/span&gt;
+&lt;/button&gt;
+&lt;ul data-state=&#34;closed&#34; class=&#34;hx:ltr:pl-5 hx:rtl:pr-5 hx:data-[state=closed]:hidden&#34;&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1&gt;.git/&lt;/h1&gt;&lt;p&gt;The &lt;code&gt;.git/&lt;/code&gt; directory sites in the root of a git repository.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;COMMIT_EDITMSG&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;commit_editmsg&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#commit_editmsg&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;#git_metadata_files
+A temporary git commit file that holds the commit message of last commit.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If we use &lt;code&gt;git commit&lt;/code&gt; command  (without the &lt;code&gt;m&lt;/code&gt; flag), it will store what we see in our editor while commiting any changes.  If it&amp;rsquo;s not (using &lt;code&gt;git commit -m &amp;quot;commit message&amp;quot;&lt;/code&gt;),  it will store only the commit message.&lt;/li&gt;
+&lt;li&gt;This file never leaves the local machine &amp;amp; remote doesn&amp;rsquo;t know this file&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code&gt;config&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;config&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#config&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;#git_core_files
+Text based local/project specific configuration file in  the root of &lt;code&gt;.git&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h3&gt;Sections:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sections&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sections&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;code&gt;[core]&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#core&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Basic repo settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;repositoryformatversion = 0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filemode = true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bare = false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;logallrefupdates = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;code&gt;[user]&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;user&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#user&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;User specific data like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name = abid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;email = hrabid@outlook.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;code&gt;[remote]&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;remote&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#remote&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Details about remote repo including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remote name: &lt;code&gt;[remote &amp;quot;origin&amp;quot;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;URL : &lt;code&gt;url = git@github.com:hrabid/dotfiles.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fetch Configuration: &lt;code&gt;fetch = +refs/heads/*:refs/remotes/origin/*&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;code&gt;[pull]&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pull&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pull&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Configuration for pull&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rebase = true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ff = only&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;code&gt;[branch]&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;branch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#branch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Branch Name: &lt;code&gt;[branch &amp;quot; main&amp;quot;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;remote info : &lt;code&gt;remote = origin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Merge info : &lt;code&gt;merge = refs/heads/main&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code&gt;description&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;description&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#description&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;#git_metadata_files
+Description of the repo.&lt;/p&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:flex-col hx:rounded-lg hx:border hx:py-4 hx:px-4 hx:border-gray-200 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;p class=&#34;hx:flex hx:items-center hx:font-medium&#34;&gt;&lt;svg height=16px class=&#34;hx:inline-block hx:align-middle hx:mr-2&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;Note&lt;/p&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;p&gt;&lt;code&gt;.git/description&lt;/code&gt; is not used by &lt;code&gt;git&lt;/code&gt; itself, rather it is used by the web feontends like &lt;code&gt;GitWeb&lt;/code&gt;, &lt;code&gt;cgit&lt;/code&gt; etc.&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;By default the repository show this message&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Unnamed repository; edit this file &amp;#39;description&amp;#39; to name the repository.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;But it can be edited.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;FETCH_HEAD&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;fetch_head&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#fetch_head&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;HEAD&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;head&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#head&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;HEAD&lt;/code&gt; file indicates to current Branch or commit.
+It Contains a :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reference &lt;code&gt;ref:refs/heads/branchname&lt;/code&gt;
+![[Pasted image 20250413111011.png]]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A direct commit hash, if in a detached HEAD state (Checking out a specific commit)
+the &lt;code&gt;HEAD&lt;/code&gt; file is updated with &lt;code&gt;git switch&lt;/code&gt; or &lt;code&gt;git checkout&lt;/code&gt; or &lt;code&gt;git branch -M&lt;/code&gt; commit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code&gt;hooks/&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hooks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hooks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;index&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;index&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#index&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;info/&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;info&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#info&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;logs/&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;logs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#logs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;objects/&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objects&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#objects&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Content-Addressed Storage(CAs)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;content-addressed-storagecas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#content-addressed-storagecas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In traditional Data Storage System files are rely on Hierarchical file system or location based Addresses.&lt;/p&gt;
+&lt;p&gt;In Content-Addressed Storage or CAS Data is Addressed based on their Contents rather than the location.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every data is assigned a unique identifier (in this case a SHA-1 Hash __ Basically a 40-character hexadecimal storage)&lt;/li&gt;
+&lt;li&gt;The Hash Value is derived from the contents of the file means any altercation in content changes the hash Value( the unique identifier)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Facilities of CAS&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;facilities-of-cas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#facilities-of-cas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Data Integrity &amp;amp; Security&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;data-integrity--security&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#data-integrity--security&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Since the Hash value or unique identifier is derived from the Contents of the data or file, any altercation or changes are easily detected.&lt;/p&gt;
+&lt;h4&gt;Efficient Retrieval&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;efficient-retrieval&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#efficient-retrieval&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;No Complex file path needed, just referring to the unique identifier or hash value is enough for data retrieval.&lt;/p&gt;
+&lt;h3&gt;Use Case&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;use-case&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#use-case&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Achieving data backup in CDNs&lt;/li&gt;
+&lt;li&gt;In Git for storing objects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code&gt;/packed-refs&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;packed-refs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#packed-refs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;/refs/&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;refs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#refs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;&lt;code&gt;/tag/&lt;/code&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tag&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tag&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

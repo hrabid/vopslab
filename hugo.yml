@@ -31,7 +31,7 @@ module:
 
   # workspace: hugo.work
   # imports:
-  #   - path: github.com/hrabid/vopslab.com
+  #   - path: github.com/hrabid/vopslab
 
 markup:
   highlight:
@@ -159,7 +159,6 @@ params:
       displayPagination: true
 
   toc:
-    displayToc: true
     displayTags: true
 
   highlight:
@@ -170,7 +169,7 @@ params:
 
   page:
     # full (100%), wide (90rem), normal (80rem)
-    width: normal
+    width: full 
     # tabs:
     #   sync: true
     contextMenu:
@@ -192,9 +191,9 @@ params:
     # https://giscus.app/
     giscus:
       repo: hrabid/vopslab
-      repoId: "R_kgDORCGLJA"
-      category: "General"
-      categoryId: "DIC_kwDORCGLJM4C1fKK"
+      repoId: R_kgDORCGLJA
+      category: General
+      categoryId: DIC_kwDORCGLJM4C1fKK
       mapping: pathname
       strict: 0
       reactionsEnabled: 1
