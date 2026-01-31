@@ -1,6 +1,6 @@
 # Configuration
 baseURL: ""
-title: "vOps Lab"
+title: "vOps Labs"
 theme: hextra
 
 enableRobotsTXT: true
@@ -23,7 +23,7 @@ languages:
   en:
     languageName: English
     weight: 1
-    title: vOps Lab
+    title: vOps Labs
 module:
   hugoVersion:
     extended: true
@@ -74,10 +74,16 @@ menu:
       params:
         type: search
     - name: GitHub
-      weight: 7
+      weight: 8
       url: "https://github.com/hrabid/"
       params:
         icon: github
+    - name: X
+      weight: 7
+      url: "https://x.com/hrabid2007"
+      params:
+        icon: twitter
+
   # sidebar:
   #   - identifier: more
   #     name: More
@@ -121,7 +127,7 @@ params:
 
   footer:
     enable: true
-    displayCopyright: false
+    displayCopyright: false 
     displayPoweredBy: false
     width: normal
 
@@ -194,10 +200,10 @@ params:
       repoId: R_kgDORCGLJA
       category: General
       categoryId: DIC_kwDORCGLJM4C1fKK
-      mapping: pathname
-      strict: 0
-      reactionsEnabled: 1
-      emitMetadata: 0
-      inputPosition: top
-      lang: en
-      theme: transparent_dark
+      # mapping: pathname
+      # strict: 0
+      # reactionsEnabled: 1
+      # emitMetadata: 0
+      # inputPosition: top
+      # lang: en
+      # theme: transparent_dark

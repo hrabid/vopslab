@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vOps Lab – Git</title>
+    <title>vOps Labs – Git</title>
     <link>//localhost:1313/tags/git/</link>
-    <description>Recent content in Git on vOps Lab</description>
+    <description>Recent content in Git on vOps Labs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 28 Jan 2026 16:30:00 +0000</lastBuildDate>

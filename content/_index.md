@@ -1,39 +1,17 @@
 ---
 date: '2026-01-26T16:58:44Z'
-draft: true
-title: ''
+draft: false
+title: 'vOps Labs'
+layout: hextra-home
 ---
-
 {{< hextra/hero-section heading="h1" >}}
-vOps Lab
+ Explore DevOps, Cloud, Linux & Computer Security.
 {{< /hextra/hero-section >}}
 
-{{< hextra/hero-section heading="h4" >}}
-_Powered by technophiles._
-{{< /hextra/hero-section >}}
-
-
-{{< hextra/hero-section heading="h3" >}}
-a platform for devops & security folks.  
-{{< /hextra/hero-section >}}
-
-{{< hextra/hero-subtitle >}}
-  Learn, Build, Break, Fix,  Repeat.
+{{< hextra/hero-subtitle style="margin-bottom: 2rem; display: block;" >}}
+  Sharing the journey of exploring modern infrastructure and always questioning how it works.
 {{< /hextra/hero-subtitle >}}
 
----
-{{< hextra/hero-button text="Explore Labs" link="/tutorial" >}}
-
----
-{{< hextra/feature-card title="Title" subtitle="Subtitle" >}}
-
----
-{{< hextra/feature-grid cols="3" >}}
-  {{< hextra/feature-card title="One" >}}
-  {{< hextra/feature-card title="Two" >}}
-  {{< hextra/feature-card title="Three" >}}
-{{< /hextra/feature-grid >}}
-
---- 
+{{< hextra/hero-button text="Explore Blogs" link="/blog" style="margin-bottom: 2rem; display: block;align: center;" >}}
 
 
