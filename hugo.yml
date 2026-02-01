@@ -132,6 +132,7 @@ params:
     width: normal
   social:
     github: "hrabid"
+    x: "x.com/hrabid2007"
 
   # Display the last modification date
   displayUpdatedDate: true
