@@ -3,7 +3,8 @@ date: '2026-01-30T01:06:08Z'
 draft: true
 title: 'Home'
 tags: 
-  - 
+  -
+layout: hextra-home
 cascade:
   type: blog
   params:
@@ -81,3 +82,42 @@ title="Powered by Thechnophiles"     subtitle="Subtitle" style="background: radi
 {{< /cards >}}
 
 {{< hextra/hero-button text="Explore Blogs" link="/blog" style="margin-bottom: 3rem; display: block; text-align: center;" >}}
+
+
+{{< hextra/feature-card 
+  title="Notes" 
+  link="/blog"
+  subtitle="Manage secrets with AWS Secrets Manager and Vault." 
+  icon="shield-exclamation"
+  image="/images/markdown-mark-white.png"
+  style="background: radial-gradient(ellipse at 50% 80%,rgba(102, 89, 186, 0.15),hsla(0,0%,100%,0)); margin-bottom: 2rem; display: block;" >}}
+
+
+{{< hextra/feature-card
+    title="Markdown is All You Need"
+    subtitle="Compose with just Markdown. Enrich with Shortcode components."
+    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
+    image="images/markdown-mark-white.png"
+    imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
+>}}
+
+
+{{< newsletter 
+    listmonk_url="https://your-listmonk-instance.com" 
+    list_uuid="your-list-uuid-here"
+    title="Stay in the Loop"
+    description="Get weekly updates about our latest posts and projects."
+    button_text="Subscribe"
+    privacy_url="/privacy"
+    terms_url="/terms"
+>}}
+
+{{< newsletter-cta 
+    listmonk_url="https://your-listmonk.com" 
+    list_uuid="your-list-uuid-here"
+    placeholder="Enter your email..."
+    button_text="Join Now"
+>}}
+
+

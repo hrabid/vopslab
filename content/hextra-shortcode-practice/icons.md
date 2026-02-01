@@ -11,5 +11,21 @@ title: 'Icons'
 {{< icon "x" >}}
 {{< icon "gitlab" >}}
 
+{{< icon "copy" >}}
+{{< icon "one" >}}
+{{< icon "markdown" >}}
+{{< icon "folder-tree" >}}
+{{< icon "card" >}}
+{{< icon "chat" >}}
+{{< icon "credit-card" >}}
+{{< icon "cube-transparent" >}}
+{{< icon "cube" >}}
+{{< icon "database" >}}
+{{< icon "desktop-computer" >}}
+{{< icon "login" >}}
+{{< icon "identification" >}}
+{{< icon "terminal" >}}
+{{< icon "x" >}}
+
 # Icons with card
-{{< card icon="github" >}}
+{{< card icon="github" title="GitHub" >}}

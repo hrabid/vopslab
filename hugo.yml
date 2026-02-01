@@ -100,7 +100,7 @@ menu:
   #     weight: 3
 
 params:
-  description: "" 
+  description: "Explore DevOps, Cloud, Linux & Computer Security." 
 
   externalLinkDecoration: true
 
@@ -126,10 +126,12 @@ params:
     displayToggle: true
 
   footer:
-    enable: true
+    enable: false
     displayCopyright: false 
     displayPoweredBy: false
     width: normal
+  social:
+    github: "https://github.com/hrabid"
 
   # Display the last modification date
   displayUpdatedDate: true

@@ -1,0 +1,363 @@
+<!-- layouts/shortcodes/newsletter.html -->
+<div class="newsletter-container">
+    <div class="newsletter-header">
+        <div class="newsletter-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </div>
+        <h3 class="newsletter-title">{{ .Get "title" | default "Stay Updated" }}</h3>
+        <p class="newsletter-description">{{ .Get "description" | default "Subscribe to our newsletter and get the latest updates delivered to your inbox." }}</p>
+    </div>
+
+    <form class="newsletter-form" data-listmonk-url="{{ .Get "listmonk_url" }}" data-list-uuid="{{ .Get "list_uuid" }}">
+        <div class="form-group">
+            <label for="newsletter-name">Name</label>
+            <input 
+                type="text" 
+                id="newsletter-name" 
+                name="name" 
+                placeholder="Enter your name"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="newsletter-email">Email Address</label>
+            <input 
+                type="email" 
+                id="newsletter-email" 
+                name="email" 
+                placeholder="you@example.com"
+                required
+            >
+        </div>
+
+        <button type="submit" class="subscribe-button">
+            <span class="button-text">{{ .Get "button_text" | default "Subscribe Now" }}</span>
+            <div class="spinner"></div>
+        </button>
+
+        <div class="newsletter-message"></div>
+    </form>
+
+    {{ if .Get "show_privacy" | default true }}
+    <p class="privacy-text">
+        We respect your privacy. Unsubscribe at any time.
+        {{ if .Get "privacy_url" }}<br><a href="{{ .Get "privacy_url" }}">Privacy Policy</a>{{ end }}
+        {{ if and (.Get "privacy_url") (.Get "terms_url") }} • {{ end }}
+        {{ if .Get "terms_url" }}<a href="{{ .Get "terms_url" }}">Terms of Service</a>{{ end }}
+    </p>
+    {{ end }}
+</div>
+
+<style>
+    .newsletter-container {
+        background: var(--color-neutral-50, #f9fafb);
+        border-radius: 12px;
+        border: 1px solid var(--color-neutral-200, #e5e7eb);
+        max-width: 500px;
+        width: 100%;
+        padding: 32px;
+        margin: 24px auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .newsletter-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+    }
+
+    .newsletter-header {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .newsletter-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 12px;
+    }
+
+    .newsletter-icon svg {
+        width: 28px;
+        height: 28px;
+        fill: white;
+    }
+
+    .newsletter-title {
+        font-size: 22px;
+        color: var(--color-neutral-900, #111827);
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+
+    .newsletter-description {
+        color: var(--color-neutral-600, #4b5563);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .newsletter-form .form-group {
+        margin-bottom: 16px;
+    }
+
+    .newsletter-form label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-neutral-700, #374151);
+        margin-bottom: 6px;
+    }
+
+    .newsletter-form input[type="text"],
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 15px;
+        border: 1.5px solid var(--color-neutral-300, #d1d5db);
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        background: white;
+        color: var(--color-neutral-900, #111827);
+    }
+
+    .newsletter-form input[type="text"]:focus,
+    .newsletter-form input[type="email"]:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .newsletter-form input::placeholder {
+        color: var(--color-neutral-400, #9ca3af);
+    }
+
+    .newsletter-form .subscribe-button {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .newsletter-form .subscribe-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+    }
+
+    .newsletter-form .subscribe-button:active {
+        transform: translateY(0);
+    }
+
+    .newsletter-form .subscribe-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .newsletter-form .subscribe-button .spinner {
+        display: none;
+        width: 18px;
+        height: 18px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: newsletter-spin 0.8s linear infinite;
+        margin: 0 auto;
+    }
+
+    .newsletter-form .subscribe-button.loading .button-text {
+        display: none;
+    }
+
+    .newsletter-form .subscribe-button.loading .spinner {
+        display: block;
+    }
+
+    @keyframes newsletter-spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .newsletter-message {
+        margin-top: 12px;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 13px;
+        display: none;
+        animation: newsletter-slideDown 0.3s ease;
+    }
+
+    @keyframes newsletter-slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .newsletter-message.success {
+        background: #d1fae5;
+        color: #065f46;
+        border: 1px solid #6ee7b7;
+        display: block;
+    }
+
+    .newsletter-message.error {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
+        display: block;
+    }
+
+    .privacy-text {
+        margin-top: 16px;
+        font-size: 12px;
+        color: var(--color-neutral-500, #6b7280);
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .privacy-text a {
+        color: #3b82f6;
+        text-decoration: none;
+    }
+
+    .privacy-text a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+        .newsletter-container {
+            padding: 24px 16px;
+        }
+
+        .newsletter-title {
+            font-size: 20px;
+        }
+
+        .newsletter-description {
+            font-size: 13px;
+        }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .newsletter-container {
+            background: var(--color-neutral-800, #1f2937);
+            border-color: var(--color-neutral-700, #374151);
+        }
+
+        .newsletter-title {
+            color: var(--color-neutral-100, #f3f4f6);
+        }
+
+        .newsletter-description {
+            color: var(--color-neutral-400, #9ca3af);
+        }
+
+        .newsletter-form label {
+            color: var(--color-neutral-300, #d1d5db);
+        }
+
+        .newsletter-form input[type="text"],
+        .newsletter-form input[type="email"] {
+            background: var(--color-neutral-700, #374151);
+            border-color: var(--color-neutral-600, #4b5563);
+            color: var(--color-neutral-100, #f3f4f6);
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--color-neutral-500, #6b7280);
+        }
+
+        .privacy-text {
+            color: var(--color-neutral-400, #9ca3af);
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        document.querySelectorAll('.newsletter-form').forEach(form => {
+            const submitButton = form.querySelector('.subscribe-button');
+            const messageDiv = form.querySelector('.newsletter-message');
+            const listmonkUrl = form.dataset.listmonkUrl;
+            const listUuid = form.dataset.listUuid;
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const name = form.querySelector('input[name="name"]').value.trim();
+                const email = form.querySelector('input[name="email"]').value.trim();
+
+                if (!name || !email) {
+                    showMessage('Please fill in all fields', 'error');
+                    return;
+                }
+
+                if (!listmonkUrl || !listUuid) {
+                    showMessage('Newsletter configuration error. Please contact site administrator.', 'error');
+                    return;
+                }
+
+                submitButton.classList.add('loading');
+                submitButton.disabled = true;
+                messageDiv.style.display = 'none';
+
+                try {
+                    const response = await fetch(`${listmonkUrl}/subscription/form`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            'email': email,
+                            'name': name,
+                            'l': listUuid,
+                        })
+                    });
+
+                    if (response.ok) {
+                        showMessage('Successfully subscribed! Please check your email to confirm.', 'success');
+                        form.reset();
+                    } else {
+                        showMessage('Subscription failed. Please try again.', 'error');
+                    }
+                } catch (error) {
+                    showMessage('Network error. Please check your connection and try again.', 'error');
+                } finally {
+                    submitButton.classList.remove('loading');
+                    submitButton.disabled = false;
+                }
+            });
+
+            function showMessage(text, type) {
+                messageDiv.textContent = text;
+                messageDiv.className = `newsletter-message ${type}`;
+                messageDiv.style.display = 'block';
+            }
+        });
+    })();
+</script>

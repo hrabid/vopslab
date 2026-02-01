@@ -12,6 +12,27 @@ layout: hextra-home
   Sharing the journey of exploring modern infrastructure and always questioning how it works.
 {{< /hextra/hero-subtitle >}}
 
+<!--
 {{< hextra/hero-button text="Explore Blogs" link="/blog" style="margin-bottom: 2rem; display: block;align: center;" >}}
+-->
+
+{{< newsletter-cta 
+    listmonk_url="https://your-listmonk.com" 
+    list_uuid="your-list-uuid-here"
+    placeholder="Enter your email..."
+    button_text="Subscribe"
+>}}
+
+
+
+{{< newsletter 
+    listmonk_url="https://your-listmonk-instance.com" 
+    list_uuid="your-list-uuid-here"
+    title="Stay in the Loop"
+    description="Get weekly updates about our latest posts and projects."
+    button_text="Subscribe"
+    privacy_url="/privacy"
+    terms_url="/terms"
+>}}
 
 

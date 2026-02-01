@@ -1,0 +1,299 @@
+<!-- layouts/shortcodes/newsletter-cta.html -->
+<div class="newsletter-cta">
+    <form class="newsletter-cta-form" data-listmonk-url="{{ .Get "listmonk_url" }}" data-list-uuid="{{ .Get "list_uuid" }}">
+        <div class="newsletter-cta-input-group">
+            <input 
+                type="email" 
+                class="newsletter-cta-email" 
+                name="email" 
+                placeholder="{{ .Get "placeholder" | default "Your email address" }}"
+                required
+                aria-label="Email address"
+            >
+            <button type="submit" class="newsletter-cta-button">
+                <span class="button-text">{{ .Get "button_text" | default "Subscribe" }}</span>
+                <span class="button-spinner"></span>
+            </button>
+        </div>
+        <div class="newsletter-cta-message"></div>
+    </form>
+</div>
+
+<style>
+    .newsletter-cta {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .newsletter-cta-form {
+        width: 100%;
+    }
+
+    .newsletter-cta-input-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: 2px solid #3b82f6;
+        border-radius: 50px;
+        padding: 6px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+    }
+
+    .newsletter-cta-input-group:focus-within {
+        border-color: #8b5cf6;
+        box-shadow: 0 6px 30px rgba(139, 92, 246, 0.25);
+    }
+
+    .newsletter-cta-email {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 14px 24px;
+        font-size: 16px;
+        color: var(--color-neutral-300, #d1d5db);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .newsletter-cta-email::placeholder {
+        color: var(--color-neutral-500, #6b7280);
+        opacity: 1;
+    }
+
+    .newsletter-cta-button {
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        color: #ffffff;
+        border: none;
+        border-radius: 40px;
+        padding: 14px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .newsletter-cta-button:hover {
+        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .newsletter-cta-button:active {
+        transform: translateY(0);
+    }
+
+    .newsletter-cta-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .newsletter-cta-button .button-spinner {
+        display: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: #ffffff;
+        border-radius: 50%;
+        animation: newsletter-cta-spin 0.8s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .newsletter-cta-button.loading .button-text {
+        opacity: 0;
+    }
+
+    .newsletter-cta-button.loading .button-spinner {
+        display: block;
+    }
+
+    @keyframes newsletter-cta-spin {
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .newsletter-cta-message {
+        margin-top: 12px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        display: none;
+        animation: newsletter-cta-fadeIn 0.3s ease;
+    }
+
+    @keyframes newsletter-cta-fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .newsletter-cta-message.success {
+        background: rgba(59, 130, 246, 0.15);
+        color: #3b82f6;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        display: block;
+    }
+
+    .newsletter-cta-message.error {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        display: block;
+    }
+
+    /* Responsive design */
+    @media (max-width: 640px) {
+        .newsletter-cta-input-group {
+            flex-direction: column;
+            border-radius: 16px;
+            padding: 8px;
+        }
+
+        .newsletter-cta-email {
+            width: 100%;
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        .newsletter-cta-button {
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px 24px;
+        }
+    }
+
+    /* Dark theme (default for this design) */
+    @media (prefers-color-scheme: light) {
+        .newsletter-cta-input-group {
+            background: #1a1a1a;
+        }
+        
+        .newsletter-cta-email {
+            color: #d1d5db;
+        }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+        .newsletter-cta-email {
+            font-size: 15px;
+            padding: 12px 18px;
+        }
+
+        .newsletter-cta-button {
+            font-size: 15px;
+            padding: 12px 20px;
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        document.querySelectorAll('.newsletter-cta-form').forEach(form => {
+            const submitButton = form.querySelector('.newsletter-cta-button');
+            const messageDiv = form.querySelector('.newsletter-cta-message');
+            const emailInput = form.querySelector('.newsletter-cta-email');
+            const listmonkUrl = form.dataset.listmonkUrl;
+            const listUuid = form.dataset.listUuid;
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const email = emailInput.value.trim();
+
+                if (!email) {
+                    showMessage('Please enter your email address', 'error');
+                    return;
+                }
+
+                // Basic email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showMessage('Please enter a valid email address', 'error');
+                    return;
+                }
+
+                if (!listmonkUrl || !listUuid) {
+                    showMessage('Configuration error. Please contact support.', 'error');
+                    return;
+                }
+
+                submitButton.classList.add('loading');
+                submitButton.disabled = true;
+                messageDiv.style.display = 'none';
+
+                try {
+                    const response = await fetch(`${listmonkUrl}/subscription/form`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            'email': email,
+                            'name': email.split('@')[0], // Use email prefix as name
+                            'l': listUuid,
+                        })
+                    });
+
+                    if (response.ok) {
+                        showMessage('🎉 Subscribed! Check your email to confirm.', 'success');
+                        form.reset();
+                        
+                        // Analytics tracking (optional)
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'newsletter_signup', {
+                                'event_category': 'Newsletter',
+                                'event_label': 'CTA Subscription'
+                            });
+                        }
+                    } else {
+                        const text = await response.text();
+                        
+                        // Check if already subscribed
+                        if (text.includes('already exists') || text.includes('already subscribed')) {
+                            showMessage('You\'re already subscribed!', 'error');
+                        } else {
+                            showMessage('Unable to subscribe. Please try again.', 'error');
+                        }
+                        console.error('Subscription error:', text);
+                    }
+                } catch (error) {
+                    showMessage('Connection error. Please try again.', 'error');
+                    console.error('Network error:', error);
+                } finally {
+                    submitButton.classList.remove('loading');
+                    submitButton.disabled = false;
+                }
+            });
+
+            function showMessage(text, type) {
+                messageDiv.textContent = text;
+                messageDiv.className = `newsletter-cta-message ${type}`;
+                messageDiv.style.display = 'block';
+                
+                // Auto-hide success messages after 5 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        });
+    })();
+</script>
