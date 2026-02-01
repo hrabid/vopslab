@@ -131,7 +131,7 @@ params:
     displayPoweredBy: false
     width: normal
   social:
-    github: "https://github.com/hrabid"
+    github: "hrabid"
 
   # Display the last modification date
   displayUpdatedDate: true
