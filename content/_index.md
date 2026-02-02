@@ -25,7 +25,17 @@ layout: hextra-home
 
 {{< blog-list >}}
 
-
+{{< project-showcase 
+  title="dotfiles"
+  description="my dotfiles setup"
+  github="https://github.com/hrabid/dotfiles"
+  demo=""
+  website=""
+  tags="Go,PostgreSQL,Redis,Docker,JWT"
+  features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
+  image="/images/dotfiles.png"
+  stars="2.4k"
+>}}
 
 {{< newsletter 
     listmonk_url="https://your-listmonk-instance.com" 
