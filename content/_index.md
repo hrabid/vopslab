@@ -23,7 +23,7 @@ layout: hextra-home
     button_text="Subscribe"
 >}}
 
-
+{{< blog-list >}}
 
 {{< newsletter 
     listmonk_url="https://your-listmonk-instance.com" 

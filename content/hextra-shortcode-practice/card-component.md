@@ -2,6 +2,7 @@
 date: '2025-11-06T01:19:02Z'
 draft: true
 title: 'Card Component'
+image: "/images/markdown-mark-white.png"
 ---
 {{< cards >}}
   {{< card link="../callout-components/" title="Callout" icon="warning" >}}

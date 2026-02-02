@@ -11,9 +11,11 @@ authors:
   - name: "Habib R. Abid"
     link: "https://github.com/hrabid"
     image: "/images/hrabid.jpg"
+image: /images/markdown-mark-white.png
 sidebar:
   exclude: false
 toc: true
+featured: true
 comments: true
 ---
 ![](/images/markdown-mark-white.png)
