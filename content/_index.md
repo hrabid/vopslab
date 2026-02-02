@@ -25,6 +25,8 @@ layout: hextra-home
 
 {{< blog-list >}}
 
+
+
 {{< newsletter 
     listmonk_url="https://your-listmonk-instance.com" 
     list_uuid="your-list-uuid-here"
