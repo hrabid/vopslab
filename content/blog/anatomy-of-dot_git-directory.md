@@ -1,6 +1,6 @@
 ---
 date: '2026-01-28T16:30:00Z'
-draft: true
+draft: false
 title: 'Anatomy of dot_git/ Directory'
 tags: 
   - git
