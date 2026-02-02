@@ -54,13 +54,13 @@
 .recent-grid {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* Card wrapper */
+/* Card wrapper - ALL CARDS HAVE SAME STYLING */
 .blog-card {
   width: 100%;
   background: white;
@@ -68,25 +68,24 @@
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-}
-
-/* Horizontal separator line between cards */
-.blog-card + .blog-card {
-  border-top: 2px solid #e5e7eb;
-  padding-top: 2rem;
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
+  position: relative;
 }
 
 .blog-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   border-color: #3b82f6;
+}
+
+/* Horizontal line separator between cards */
+.blog-card-separator {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent);
+  margin: 1.5rem 0;
+  border: none;
 }
 
 /* Image */
@@ -246,6 +245,11 @@
   .featured-card .blog-card-image {
     height: 180px;
   }
+  
+  .featured-grid,
+  .recent-grid {
+    gap: 2rem;
+  }
 }
 
 /* Dark mode */
@@ -263,8 +267,8 @@
     border-color: #374151;
   }
   
-  .blog-card + .blog-card {
-    border-top-color: #374151;
+  .blog-card-separator {
+    background: linear-gradient(90deg, transparent, #374151 20%, #374151 80%, transparent);
   }
   
   .blog-section-separator {
@@ -300,42 +304,45 @@
     </div>
     
     <div class="featured-grid">
-      {{ range $featured }}
+      {{ range $index, $post := $featured }}
+      {{ if gt $index 0 }}
+      <hr class="blog-card-separator">
+      {{ end }}
       <article class="blog-card featured-card">
         <div class="blog-card-image">
-          {{ if .Params.image }}
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+          {{ if $post.Params.image }}
+            <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
           {{ end }}
           <span class="featured-badge">Featured</span>
         </div>
         
         <div class="blog-card-content">
           <div class="blog-card-meta">
-            <time class="blog-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
-              {{ .Date.Format "Jan 2, 2006" }}
+            <time class="blog-card-date" datetime="{{ $post.Date.Format "2006-01-02" }}">
+              {{ $post.Date.Format "Jan 2, 2006" }}
             </time>
-            {{ with .Params.category }}
+            {{ with $post.Params.category }}
             <span class="blog-card-category">{{ . }}</span>
             {{ end }}
           </div>
           
           <h3 class="blog-card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
           </h3>
           
           <p class="blog-card-excerpt">
-            {{ if .Params.description }}
-              {{ .Params.description | truncate 150 }}
+            {{ if $post.Params.description }}
+              {{ $post.Params.description | truncate 150 }}
             {{ else }}
-              {{ .Summary | truncate 150 }}
+              {{ $post.Summary | truncate 150 }}
             {{ end }}
           </p>
           
           <div class="blog-card-footer">
-            {{ with .Params.author }}
+            {{ with $post.Params.author }}
             <span class="blog-card-author">{{ . }}</span>
             {{ end }}
-            <a href="{{ .RelPermalink }}" class="blog-card-readmore">Read More</a>
+            <a href="{{ $post.RelPermalink }}" class="blog-card-readmore">Read More</a>
           </div>
         </div>
       </article>
@@ -358,41 +365,44 @@
       {{ $allPosts := where .Site.RegularPages "Section" "blog" }}
       {{ $recent := where $allPosts "Params.featured" "!=" true }}
       {{ $recent = first 6 $recent }}
-      {{ range $recent }}
+      {{ range $index, $post := $recent }}
+      {{ if gt $index 0 }}
+      <hr class="blog-card-separator">
+      {{ end }}
       <article class="blog-card">
         <div class="blog-card-image">
-          {{ if .Params.image }}
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+          {{ if $post.Params.image }}
+            <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
           {{ end }}
         </div>
         
         <div class="blog-card-content">
           <div class="blog-card-meta">
-            <time class="blog-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
-              {{ .Date.Format "Jan 2, 2006" }}
+            <time class="blog-card-date" datetime="{{ $post.Date.Format "2006-01-02" }}">
+              {{ $post.Date.Format "Jan 2, 2006" }}
             </time>
-            {{ with .Params.category }}
+            {{ with $post.Params.category }}
             <span class="blog-card-category">{{ . }}</span>
             {{ end }}
           </div>
           
           <h3 class="blog-card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
           </h3>
           
           <p class="blog-card-excerpt">
-            {{ if .Params.description }}
-              {{ .Params.description | truncate 120 }}
+            {{ if $post.Params.description }}
+              {{ $post.Params.description | truncate 120 }}
             {{ else }}
-              {{ .Summary | truncate 120 }}
+              {{ $post.Summary | truncate 120 }}
             {{ end }}
           </p>
           
           <div class="blog-card-footer">
-            {{ with .Params.author }}
+            {{ with $post.Params.author }}
             <span class="blog-card-author">{{ . }}</span>
             {{ end }}
-            <a href="{{ .RelPermalink }}" class="blog-card-readmore">Read More</a>
+            <a href="{{ $post.RelPermalink }}" class="blog-card-readmore">Read More</a>
           </div>
         </div>
       </article>

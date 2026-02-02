@@ -5,7 +5,7 @@ title: 'Steps'
 tags:
 author:
 comments: true
-summary:
+summary: "here's how to add steps in hugo"
 ---
 {{% steps %}}
 
