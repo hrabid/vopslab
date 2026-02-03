@@ -22,8 +22,13 @@ layout: hextra-home
     placeholder="Enter your email..."
     button_text="Subscribe"
 >}}
-
+{{< glowline >}}
 {{< blog-list >}}
+
+{{< glowline >}}
+{{< hextra/hero-section heading="h1" >}}
+ Projects
+{{< /hextra/hero-section >}}
 
 {{< project-showcase 
   title="dotfiles"
@@ -31,11 +36,13 @@ layout: hextra-home
   github="https://github.com/hrabid/dotfiles"
   demo=""
   website=""
-  tags="Go,PostgreSQL,Redis,Docker,JWT"
+  tags="chezmoi,bash,zsh"
   features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
   image="/images/dotfiles.png"
   stars="2.4k"
 >}}
+
+{{< glowline >}}
 
 {{< newsletter 
     listmonk_url="https://your-listmonk-instance.com" 
