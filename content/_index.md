@@ -15,13 +15,15 @@ layout: hextra-home
 <!--
 {{< hextra/hero-button text="Explore Blogs" link="/blog" style="margin-bottom: 2rem; display: block;align: center;" >}}
 -->
-
+<!--
 {{< newsletter-cta 
     listmonk_url="https://your-listmonk.com" 
     list_uuid="your-list-uuid-here"
     placeholder="Enter your email..."
     button_text="Subscribe"
 >}}
+--> 
+
 {{< glowline >}}
 {{< blog-list >}}
 
@@ -44,6 +46,7 @@ layout: hextra-home
 
 {{< glowline >}}
 
+<!--
 {{< newsletter 
     listmonk_url="https://your-listmonk-instance.com" 
     list_uuid="your-list-uuid-here"
@@ -53,5 +56,6 @@ layout: hextra-home
     privacy_url="/privacy"
     terms_url="/terms"
 >}}
+-->
 
 
