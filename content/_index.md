@@ -41,8 +41,19 @@ layout: hextra-home
   tags="chezmoi,bash,zsh"
   features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
   image="/images/dotfiles.png"
-  stars="2.4k"
 >}}
+
+{{< project-showcase 
+  title="dotfiles"
+  description="my dotfiles setup"
+  github="https://github.com/hrabid/dotfiles"
+  demo=""
+  website=""
+  tags="chezmoi,bash,zsh"
+  features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
+  image="/images/dotfiles.png"
+>}}
+
 
 {{< glowline >}}
 

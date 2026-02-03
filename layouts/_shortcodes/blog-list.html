@@ -49,15 +49,28 @@
   border: none;
 }
 
-/* Grid layout - 2 columns on desktop, 1 on mobile */
+/* Grid layout wrapper */
 .featured-grid,
 .recent-grid {
+  display: block;
+  width: 100%;
+}
+
+/* Grid container - 2 columns on desktop */
+.blog-grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  margin-bottom: 2rem;
+}
+
+/* Horizontal separator between rows */
+.blog-row-separator {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent);
+  margin: 2rem 0;
+  border: none;
 }
 
 /* Card wrapper */
@@ -71,6 +84,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 100%;
 }
 
 .blog-card:hover {
@@ -235,8 +249,7 @@
 
 /* Tablet - still 2 columns */
 @media (max-width: 1024px) {
-  .featured-grid,
-  .recent-grid {
+  .blog-grid-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
@@ -244,8 +257,7 @@
 
 /* Mobile - 1 column */
 @media (max-width: 768px) {
-  .featured-grid,
-  .recent-grid {
+  .blog-grid-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -257,6 +269,10 @@
   .blog-card-image,
   .featured-card .blog-card-image {
     height: 180px;
+  }
+  
+  .blog-row-separator {
+    margin: 1.5rem 0;
   }
 }
 
@@ -275,8 +291,9 @@
     border-color: #374151;
   }
   
-  .blog-section-separator {
-    background: linear-gradient(90deg, transparent, #4f46e5, #7c3aed, transparent);
+  .blog-section-separator,
+  .blog-row-separator {
+    background: linear-gradient(90deg, transparent, #374151 20%, #374151 80%, transparent);
   }
   
   .blog-card-title {
@@ -298,7 +315,7 @@
 <div class="blog-listing">
   {{/* Featured Blogs Section */}}
   {{ $featured := where .Site.RegularPages "Params.featured" true }}
-  {{ $featured = first 3 $featured }}
+  {{ $featured = first 6 $featured }}
   
   {{ if $featured }}
   <section class="blog-section">
@@ -308,45 +325,57 @@
     </div>
     
     <div class="featured-grid">
-      {{ range $post := $featured }}
-      <article class="blog-card featured-card">
-        {{ if $post.Params.image }}
-        <div class="blog-card-image">
-          <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
-          <span class="featured-badge">Featured</span>
-        </div>
+      {{ $total := len $featured }}
+      {{ range $index, $post := $featured }}
+        {{ if eq (mod $index 2) 0 }}
+          {{ if gt $index 0 }}
+            <hr class="blog-row-separator">
+          {{ end }}
+          <div class="blog-grid-container">
         {{ end }}
         
-        <div class="blog-card-content">
-          <div class="blog-card-meta">
-            <time class="blog-card-date" datetime="{{ $post.Date.Format "2006-01-02" }}">
-              {{ $post.Date.Format "Jan 2, 2006" }}
-            </time>
-            {{ with $post.Params.category }}
-            <span class="blog-card-category">{{ . }}</span>
-            {{ end }}
+        <article class="blog-card featured-card">
+          {{ if $post.Params.image }}
+          <div class="blog-card-image">
+            <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
+            <span class="featured-badge">Featured</span>
           </div>
+          {{ end }}
           
-          <h3 class="blog-card-title">
-            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
-          </h3>
-          
-          <p class="blog-card-excerpt">
-            {{ if $post.Params.description }}
-              {{ $post.Params.description | truncate 150 }}
-            {{ else }}
-              {{ $post.Summary | truncate 150 }}
-            {{ end }}
-          </p>
-          
-          <div class="blog-card-footer">
-            {{ with $post.Params.author }}
-            <span class="blog-card-author">{{ . }}</span>
-            {{ end }}
-            <a href="{{ $post.RelPermalink }}" class="blog-card-readmore">Read More</a>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <time class="blog-card-date" datetime="{{ $post.Date.Format "2006-01-02" }}">
+                {{ $post.Date.Format "Jan 2, 2006" }}
+              </time>
+              {{ with $post.Params.category }}
+              <span class="blog-card-category">{{ . }}</span>
+              {{ end }}
+            </div>
+            
+            <h3 class="blog-card-title">
+              <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+            </h3>
+            
+            <p class="blog-card-excerpt">
+              {{ if $post.Params.description }}
+                {{ $post.Params.description | truncate 150 }}
+              {{ else }}
+                {{ $post.Summary | truncate 150 }}
+              {{ end }}
+            </p>
+            
+            <div class="blog-card-footer">
+              {{ with $post.Params.author }}
+              <span class="blog-card-author">{{ . }}</span>
+              {{ end }}
+              <a href="{{ $post.RelPermalink }}" class="blog-card-readmore">Read More</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+        
+        {{ if or (eq (mod (add $index 1) 2) 0) (eq (add $index 1) $total) }}
+          </div>
+        {{ end }}
       {{ end }}
     </div>
   </section>
@@ -366,44 +395,57 @@
       {{ $allPosts := where .Site.RegularPages "Section" "blog" }}
       {{ $recent := where $allPosts "Params.featured" "!=" true }}
       {{ $recent = first 6 $recent }}
-      {{ range $post := $recent }}
-      <article class="blog-card">
-        {{ if $post.Params.image }}
-        <div class="blog-card-image">
-          <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
-        </div>
+      {{ $total := len $recent }}
+      
+      {{ range $index, $post := $recent }}
+        {{ if eq (mod $index 2) 0 }}
+          {{ if gt $index 0 }}
+            <hr class="blog-row-separator">
+          {{ end }}
+          <div class="blog-grid-container">
         {{ end }}
         
-        <div class="blog-card-content">
-          <div class="blog-card-meta">
-            <time class="blog-card-date" datetime="{{ $post.Date.Format "2006-01-02" }}">
-              {{ $post.Date.Format "Jan 2, 2006" }}
-            </time>
-            {{ with $post.Params.category }}
-            <span class="blog-card-category">{{ . }}</span>
-            {{ end }}
+        <article class="blog-card">
+          {{ if $post.Params.image }}
+          <div class="blog-card-image">
+            <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
           </div>
+          {{ end }}
           
-          <h3 class="blog-card-title">
-            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
-          </h3>
-          
-          <p class="blog-card-excerpt">
-            {{ if $post.Params.description }}
-              {{ $post.Params.description | truncate 120 }}
-            {{ else }}
-              {{ $post.Summary | truncate 120 }}
-            {{ end }}
-          </p>
-          
-          <div class="blog-card-footer">
-            {{ with $post.Params.author }}
-            <span class="blog-card-author">{{ . }}</span>
-            {{ end }}
-            <a href="{{ $post.RelPermalink }}" class="blog-card-readmore">Read More</a>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <time class="blog-card-date" datetime="{{ $post.Date.Format "2006-01-02" }}">
+                {{ $post.Date.Format "Jan 2, 2006" }}
+              </time>
+              {{ with $post.Params.category }}
+              <span class="blog-card-category">{{ . }}</span>
+              {{ end }}
+            </div>
+            
+            <h3 class="blog-card-title">
+              <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+            </h3>
+            
+            <p class="blog-card-excerpt">
+              {{ if $post.Params.description }}
+                {{ $post.Params.description | truncate 120 }}
+              {{ else }}
+                {{ $post.Summary | truncate 120 }}
+              {{ end }}
+            </p>
+            
+            <div class="blog-card-footer">
+              {{ with $post.Params.author }}
+              <span class="blog-card-author">{{ . }}</span>
+              {{ end }}
+              <a href="{{ $post.RelPermalink }}" class="blog-card-readmore">Read More</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+        
+        {{ if or (eq (mod (add $index 1) 2) 0) (eq (add $index 1) $total) }}
+          </div>
+        {{ end }}
       {{ end }}
     </div>
     

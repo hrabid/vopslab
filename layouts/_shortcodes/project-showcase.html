@@ -23,6 +23,7 @@
 {{ $features := split (.Get "features" | default "") "|" }}
 {{ $image := .Get "image" }}
 
+<div class="projects-grid">
 <div class="hextra-card project-showcase group relative">
   <div class="project-showcase-inner">
     {{ if $image }}
@@ -96,15 +97,33 @@
     </div>
   </div>
 </div>
+</div>
 
 <style>
-.project-showcase {
+/* Responsive Grid Container */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   margin: 2rem 0;
+}
+
+/* 2-column layout for desktop */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-showcase {
   border-radius: 1rem;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
   border: 1px solid rgba(99, 102, 241, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .dark .project-showcase {
@@ -123,14 +142,16 @@
 }
 
 .project-showcase-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
   .project-showcase-inner {
-    grid-template-columns: 300px 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
   }
 }
 
@@ -138,7 +159,8 @@
   position: relative;
   overflow: hidden;
   background: #f1f5f9;
-  min-height: 200px;
+  height: 200px;
+  flex-shrink: 0;
 }
 
 .dark .project-image-wrapper {

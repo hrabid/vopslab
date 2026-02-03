@@ -14,7 +14,7 @@ authors:
     image: ""
     link: ""
 comments: true
-summary:
+summary: "a reference page for the website i am building"
 ---
 
 {{< hextra/hero-section heading="h1" >}}
