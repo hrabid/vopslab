@@ -1,0 +1,31 @@
+{{/*
+  Projects Grid Wrapper - Use this to wrap your project cards
+  
+  Usage:
+  {{< projects-grid >}}
+    {{< project-card ... >}}
+    {{< project-card ... >}}
+  {{< /projects-grid >}}
+*/}}
+
+<div class="pg-container">
+  {{ .Inner }}
+</div>
+
+<style>
+.pg-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .pg-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+</style>
