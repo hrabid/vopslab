@@ -1,4 +1,3 @@
-# Configuration
 baseURL: ""
 title: "vOps Labs"
 theme: hextra
@@ -133,6 +132,9 @@ params:
   social:
     github: "hrabid"
     twitter: "x.com/hrabid2007"
+    facebook: "vopslabs"
+    telegram: "vopslabs"
+
 
 
   # Display the last modification date
@@ -200,7 +202,7 @@ params:
     type: giscus
     # https://giscus.app/
     giscus:
-      repo: hrabid/vopslab
+      repo: hrabid/vopslabs
       repoId: R_kgDORCGLJA
       category: General
       categoryId: DIC_kwDORCGLJM4C1fKK

@@ -36,20 +36,10 @@ layout: hextra-home
   github="https://github.com/hrabid/dotfiles"
   demo=""
   website=""
-  tags="chezmoi,bash,zsh"
-  features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
+  tags="chezmoi,bash,zsh,fzf,starship"
+  features="dotfiles manager: chezmoi|keyboard-driven workflow"
   image="/images/dotfiles.png"
 >}}
-{{< project-showcase 
-  title="Portfolio Theme"
-  description="Modern Hugo theme for developers"
-  github="https://github.com/user/portfolio-theme"
-  website="https://theme-demo.com"
-  tags="Hugo,TailwindCSS,JavaScript"
-  features="Fast|SEO ready|Dark mode|Responsive"
-  image="/images/theme.png"
->}}
-
 {{< /projects-grid >}}
 
 {{< glowline >}}
