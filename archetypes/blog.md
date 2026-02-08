@@ -13,5 +13,6 @@ authors:
     image: ""
     link: ""
 comments: true
+featured: 
 summary:
 ---

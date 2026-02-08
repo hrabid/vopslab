@@ -1,0 +1,322 @@
+---
+date: '2026-02-08T02:15:26Z'
+draft: true
+title: 'Reference'
+tags: 
+  - 
+cascade:
+  type: blog
+  params:
+    reversePagination: false 
+authors:
+  - name: "Abid"
+    image: "/images/hrabid.png"
+    link: "https://github.com/hrabid"
+comments: true
+featured: false 
+summary: "Reference for hugo hextra theme for reusablity"
+---
+
+
+# Reference
+## newsletter-cta 
+```markdown
+
+{{< newsletter-cta 
+    listmonk_url="https://your-listmonk.com" 
+    list_uuid="your-list-uuid-here"
+    placeholder="Enter your email..."
+    button_text="Subscribe"
+>}}
+```
+## newsletter
+```markdown
+{{< newsletter 
+    listmonk_url="https://your-listmonk-instance.com" 
+    list_uuid="your-list-uuid-here"
+    title="Stay in the Loop"
+    description="Get weekly updates about our latest posts and projects."
+    button_text="Subscribe"
+    privacy_url="/privacy"
+    terms_url="/terms"
+>}}
+```
+## glowline
+```markdown
+{{< glowline >}}
+```
+## blog-list
+```markdown
+{{< blog-list >}}
+```
+
+## project-showcase & projects-grid 
+```markdown
+{{< projects-grid >}}
+{{< project-showcase 
+  title="dotfiles"
+  description="my dotfiles setup"
+  github="https://github.com/hrabid/dotfiles"
+  demo=""
+  website=""
+  tags="chezmoi,bash,zsh"
+  features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
+  image=""
+>}}
+
+{{< project-showcase 
+  title="dotfiles"
+  description="my dotfiles setup"
+  github="https://github.com/hrabid/dotfiles"
+  demo=""
+  website=""
+  tags="chezmoi,bash,zsh"
+  features="RESTful architecture|Real-time updates|Role-based access control|Comprehensive API docs|99.9% uptime SLA"
+  image="/images/markdown-mark-white.png"
+>}}
+{{< /projects-grid >}}
+
+```
+## asciinema
+```markdown
+{{< asciinema file="demo.cast" >}}
+
+{{< asciinema 
+  file="demo.cast"
+  theme="dracula"
+  speed="2"
+  autoplay="true"
+  loop="true"
+  markers="1.5:Installation,3.2:Configuration,5.8:Testing"
+>}}
+```
+## badeges 
+```markdown
+
+# Badges 
+
+## Defaults 
+{{< badge "Badges" >}}
+
+## Colors 
+{{< badge content="Badge" >}}
+{{< badge content="Badge" color="purple" >}}
+{{< badge content="Badge" color="indigo" >}}
+{{< badge content="Badge" color="blue" >}}
+{{< badge content="Badge" color="green" >}}
+{{< badge content="Badge" color="yellow" >}}
+{{< badge content="Badge" color="amber" >}}
+{{< badge content="Badge" color="orange" >}}
+{{< badge content="Badge" color="red" >}}
+
+## Borders 
+{{< badge content="Badge" border=false >}}
+{{< badge content="Badge" color="purple" border=false >}}
+{{< badge content="Badge" color="indigo" border=false >}}
+{{< badge content="Badge" color="blue" border=false >}}
+{{< badge content="Badge" color="green" border=false >}}
+{{< badge content="Badge" color="yellow" border=false >}}
+{{< badge content="Badge" color="amber" border=false >}}
+{{< badge content="Badge" color="orange" border=false >}}
+{{< badge content="Badge" color="red" border=false >}}
+
+## Links & icons 
+{{< badge content="Release" icon="github" link="https://github.com/imfing/hextra/releases"  >}}
+
+## Options 
+Name: Description
+
+`content`: The text of the badge.
+
+`link`: The link of the badge.
+
+`icon`:	The icon of the badge.
+
+`color`:	The color of the badge.
+gray (default), purple, indigo, blue, green, yellow, amber, orange, red.
+
+`class`: The class of the badge.
+
+`border`:	Adds or removes the border (default: true).
+```
+## callout
+```markdown
+
+{{< callout >}}
+A callout is a short piece of text intended to attract attention
+{{< /callout >}}
+
+{{< callout type="warning" >}}
+A callout is a short piece of text intended to attract attention
+{{< /callout >}}
+
+
+{{< callout type="error" >}}
+A callout is a short piece of text intended to attract attention
+{{< /callout >}}
+
+
+{{< callout type="info" >}}
+A callout is a short piece of text intended to attract attention
+{{< /callout >}}
+
+{{< callout type="important" >}}
+A callout is a short piece of text intended to attract attention
+{{< /callout >}}
+
+{{< callout type="info" icon="sparkles">}}
+A callout is a short piece of text intended to attract attention
+{{< /callout >}}
+
+```
+## cards  
+```markdown
+{{< cards >}}
+  {{< card link="../callout-components/" title="Callout" icon="warning" >}}
+  {{< card link="../callout-components/" title="Card with tag" icon="tag" tag= "A custom tag" >}}
+  {{< card link="/" title="No Icon" >}}
+{{< /cards >}}
+```
+## details 
+```markdown
+{{% details title="Click me to reveal" closed="true" %}}
+
+This will be hidden by default.
+
+{{% /details %}}
+
+```
+## icons
+```markdown
+{{< icon "github" >}}
+{{< icon "facebook" >}}
+{{< icon "youtube" >}}
+{{< icon "twitter" >}}
+{{< icon "x" >}}
+{{< icon "gitlab" >}}
+
+{{< icon "copy" >}}
+{{< icon "one" >}}
+{{< icon "markdown" >}}
+{{< icon "folder-tree" >}}
+{{< icon "card" >}}
+{{< icon "chat" >}}
+{{< icon "credit-card" >}}
+{{< icon "cube-transparent" >}}
+{{< icon "cube" >}}
+{{< icon "database" >}}
+{{< icon "desktop-computer" >}}
+{{< icon "login" >}}
+{{< icon "identification" >}}
+{{< icon "terminal" >}}
+{{< icon "x" >}}
+
+# Icons with card
+{{< card icon="github" title="GitHub" >}}
+```
+## pdf 
+```markdown
+{{< pdf "/file.pdf" >}}
+```
+# steps 
+```markdown
+{{% steps %}}
+
+### Step 1
+
+This is the first step.
+
+### Step 2
+
+This is the second step.
+
+{{% /steps %}}
+```
+## tabs 
+```markdown
+{{< tabs items="JSON,YAML,TOML" selected="1" >}}
+
+  {{< tab >}}
+  ```json
+  { "hello": "world" }
+  ```
+  {{< /tab >}}
+  
+  {{< tab >}}
+  ```yaml
+  hello: world
+  ```
+YAML is the Lingua franka of DevOps & Cloud 
+  {{< /tab >}}
+
+  {{< tab >}}
+  ```toml
+  hello = "world"
+```
+  {{< /tab >}}
+{{< /tabs >}}
+```
+
+## hextra/shortcodes 
+### hero-section
+```markdown
+{{< hextra/hero-section heading="h1" >}}
+ Explore DevOps, Cloud, Linux & Computer Security.
+{{< /hextra/hero-section >}}
+```
+### hero-subtitle
+```markdown
+{{< hextra/hero-subtitle style="margin-bottom: 2rem; display: block;" >}}
+  Sharing the journey of exploring modern infrastructure and always questioning how it works.
+{{< /hextra/hero-subtitle >}}
+```
+### hero-button 
+```markdown
+{{< hextra/hero-button text="Explore Blogs" link="/blog" style="margin-bottom: 2rem; display: block;align: center;" >}}
+```
+### hero-badge
+```markdown
+{{< hextra/hero-badge >}}
+  <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>
+  <span>Free, open source</span>
+  {{< icon name="arrow-circle-right" attributes="height=14" >}}
+{{< /hextra/hero-badge >}}
+```
+### feature-grid 
+```markdown
+
+{{< hextra/feature-grid cols="3" >}} {{< hextra/feature-card title="One" >}}
+  {{< hextra/feature-card title="Two" >}}
+  {{< hextra/feature-card title="Three" >}}
+{{< /hextra/feature-grid >}}
+
+```
+### feature-card 
+```markdown
+
+{{< hextra/feature-card 
+  title="Secrets Management" 
+  link="/docs/configuration/secrets/"
+  subtitle="Manage secrets with AWS Secrets Manager and Vault." 
+  icon="shield-exclamation" 
+  style="background: radial-gradient(ellipse at 50% 80%,rgba(102, 89, 186, 0.15),hsla(0,0%,100%,0)); margin-bottom: 2rem; display: block;" >}}
+
+
+{{< hextra/feature-card 
+  title="Comparison with Cloud services" 
+  icon="cog" 
+  subtitle="Compared to Cloud services like Google Cloud Run and AWS App Runner, OpenRun provides:" 
+  style="background: radial-gradient(ellipse at 50% 80%,rgba(89, 67, 7, 0.15),hsla(0,0%,100%,0)); margin-bottom: 2rem; display: block;" >}}
+
+{{< hextra/feature-card
+    title="Markdown is All You Need"
+    subtitle="Compose with just Markdown. Enrich with Shortcode components."
+    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
+    image="images/markdown-mark-white.png"
+    imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
+>}}
+
+```
+
+

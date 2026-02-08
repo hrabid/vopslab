@@ -5,7 +5,7 @@ title: 'Anatomy of dot_git/ Directory'
 tags: 
   - git
 authors: 
-  - name: "Habib R. Abid"
+  - name: "Abid"
     link: "https://github.com/hrabid"
     image: "/images/hrabid.jpg"
 comments: true

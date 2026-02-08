@@ -1,6 +1,6 @@
 ---
 date: 2025-10-07
-darft: "false"
+darft: false
 tags:
   - markdown
   - docs
@@ -8,7 +8,7 @@ title: Markdown Syntax
 summary: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by **John Gruber** in 2004, Markdown is now one of the world’s most popular markup languages.
 layout: "blog"
 authors: 
-  - name: "Habib R. Abid"
+  - name: "Abid"
     link: "https://github.com/hrabid"
     image: "/images/hrabid.jpg"
 image: /images/markdown-mark-white.png
