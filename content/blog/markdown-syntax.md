@@ -11,7 +11,7 @@ authors:
   - name: "Abid"
     link: "https://github.com/hrabid"
     image: "/images/hrabid.jpg"
-image: /images/markdown-mark-white.png
+image: "images/markdown-mark-white.png"
 sidebar:
   exclude: false
 toc: true
