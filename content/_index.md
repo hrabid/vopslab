@@ -38,7 +38,7 @@ layout: hextra-home
   website=""
   tags="chezmoi,bash,zsh,fzf,starship"
   features="dotfiles manager: chezmoi|keyboard-driven workflow"
-  image="/images/dotfiles.png"
+  image="images/dotfiles.png"
 >}}
 {{< /projects-grid >}}
 
