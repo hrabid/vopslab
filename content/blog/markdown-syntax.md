@@ -15,7 +15,7 @@ image: /images/markdown-mark-white.png
 sidebar:
   exclude: false
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 ![](/images/markdown-mark-white.png)

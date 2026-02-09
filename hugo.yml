@@ -1,4 +1,4 @@
-baseURL: ""
+baseURL: "https://hrabid.github.io/vopslabs"
 title: "vOps Labs"
 theme: hextra
 
@@ -83,20 +83,28 @@ menu:
       params:
         icon: twitter
 
-  # sidebar:
-  #   - identifier: more
-  #     name: More
-  #     params:
-  #       type: separator
-  #     weight: 1
-  #   - identifier: about
-  #     name: "About"
-  #     pageRef: "/about"
-  #     weight: 2
-  #   - identifier: hugoDocs
-  #     name: "Hugo Docs ↗"
-  #     url: "https://gohugo.io/documentation/"
-  #     weight: 3
+  sidebar:
+    - identifier: more
+      name: More
+      params:
+        type: separator
+      weight: 1
+    - identifier: about
+      name: "About"
+      pageRef: "/about"
+      weight: 2
+    - identifier: terms
+      name: "Terms of Services"
+      pageRef: "/terms"
+      weight: 3
+    - identifier: privacy
+      name: "Privacy Policy"
+      pageRef: "/privacy"
+      weight: 4
+    # - identifier: hugoDocs
+    #   name: "Hugo Docs ↗"
+    #   url: "https://gohugo.io/documentation/"
+    #   weight: 3
 
 params:
   description: "Explore DevOps, Cloud, Linux & Computer Security." 
@@ -156,7 +164,7 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/imfing/hextra/edit/main/docs/content"
+    base: "https://github.com/hrabid/vopslabs/tree/master/content"
 
   blog:
     list:

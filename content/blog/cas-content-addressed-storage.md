@@ -14,7 +14,7 @@ authors:
     image: "/images/hrabid.jpg"
     link: ""
 comments: true
-featured: true 
+featured: false 
 summary: "Content Addressed Storage or CAS in short is used to store git objects, let's understand what it is?"
 ---
 
