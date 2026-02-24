@@ -23,36 +23,6 @@ layout: hextra-home
 
 {{< glowline >}}
 {{< blog-list >}}
-
-{{< glowline >}}
-{{< hextra/hero-section heading="h1" >}}
- Projects
-{{< /hextra/hero-section >}}
-
-{{< projects-grid >}}
-{{< project-showcase 
-  title="dotfiles"
-  description="my dotfiles setup"
-  github="https://github.com/hrabid/dotfiles"
-  demo=""
-  website=""
-  tags="chezmoi,bash,zsh,fzf,starship"
-  features="dotfiles manager: chezmoi|keyboard-driven workflow"
-  image="images/dotfiles.png"
->}}
-
-{{< project-showcase 
-  title="vopslabs.com"
-  description="This Website"
-  github="https://github.com/hrabid/vopslabs"
-  demo=""
-  website="https://vopslabs.com"
-  tags="hugo,hextra,markdown"
-  features="Sharing my Journey|Documenting what I am learning"
-  image="images/logo.svg"
->}}
-{{< /projects-grid >}}
-
 {{< glowline >}}
 
 <!--
