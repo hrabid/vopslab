@@ -1,6 +1,6 @@
 ---
 date: '2026-02-09T00:21:27Z'
-draft: false
+draft: true 
 title: 'Homelab'
 tags: 
   - 

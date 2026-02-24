@@ -131,7 +131,6 @@ params:
     # light | dark | system
     default: system
     displayToggle: true
-
   footer:
     enable: false
     displayCopyright: false 
@@ -139,7 +138,7 @@ params:
     width: normal
   social:
     github: "hrabid"
-    twitter: "x.com/hrabid2007"
+    twitter: "hrabid2007"
     facebook: "vopslabs"
     telegram: "vopslabs"
 
@@ -185,22 +184,22 @@ params:
     copy:
       enable: true
       # hover | always
-      display: hover
+      display: always
 
-  page:
-    # full (100%), wide (90rem), normal (80rem)
-    width: full 
-    # tabs:
-    #   sync: true
-    contextMenu:
-      enable: true
-      links:
-        - name: Open in ChatGPT
-          icon: chatgpt
-          url: "https://chatgpt.com/?hints=search&q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
-        - name: Open in Claude
-          icon: claude
-          url: "https://claude.ai/new?q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
+  # page:
+  #   # full (100%), wide (90rem), normal (80rem)
+  #   width: full 
+  #   # tabs:
+  #   #   sync: true
+  #   contextMenu:
+  #     enable: true
+  #     links:
+  #       - name: Open in ChatGPT
+  #         icon: chatgpt
+  #         url: "https://chatgpt.com/?hints=search&q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
+  #       - name: Open in Claude
+  #         icon: claude
+  #         url: "https://claude.ai/new?q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
 
   imageZoom:
     enable: true

@@ -40,6 +40,17 @@ layout: hextra-home
   features="dotfiles manager: chezmoi|keyboard-driven workflow"
   image="images/dotfiles.png"
 >}}
+
+{{< project-showcase 
+  title="vopslabs.com"
+  description="This Website"
+  github="https://github.com/hrabid/vopslabs"
+  demo=""
+  website="https://vopslabs.com"
+  tags="hugo,hextra,markdown"
+  features="Sharing my Journey|Documenting what I am learning"
+  image="images/logo.svg"
+>}}
 {{< /projects-grid >}}
 
 {{< glowline >}}
