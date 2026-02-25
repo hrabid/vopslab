@@ -5,7 +5,7 @@ theme: hextra
 enableRobotsTXT: true
 # Parse Git commit
 enableGitInfo: true
-# enableEmoji: false
+enableEmoji: true
 hasCJKLanguage: true
 
 services:
@@ -186,20 +186,20 @@ params:
       # hover | always
       display: always
 
-  # page:
-  #   # full (100%), wide (90rem), normal (80rem)
-  #   width: full 
-  #   # tabs:
-  #   #   sync: true
-  #   contextMenu:
-  #     enable: true
-  #     links:
-  #       - name: Open in ChatGPT
-  #         icon: chatgpt
-  #         url: "https://chatgpt.com/?hints=search&q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
-  #       - name: Open in Claude
-  #         icon: claude
-  #         url: "https://claude.ai/new?q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
+  page:
+    # full (100%), wide (90rem), normal (80rem)
+    width: full 
+    tabs:
+      sync: true
+    contextMenu:
+      enable: true
+      links:
+        - name: Open in ChatGPT
+          icon: chatgpt
+          url: "https://chatgpt.com/?hints=search&q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
+        - name: Open in Claude
+          icon: claude
+          url: "https://claude.ai/new?q=I%27m+looking+at+this+documentation%3A+{url}%0AHelp+me+understand+how+to+use+it."
 
   imageZoom:
     enable: true
