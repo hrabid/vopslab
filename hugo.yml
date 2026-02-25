@@ -12,10 +12,10 @@ services:
   googleAnalytics:
     ID: G-P5DR0LVMK5
 
-# outputs:
-#   home: [html, llms]
-#   page: [html, markdown]
-#   section: [html, rss, markdown]
+outputs:
+  home: [html, llms]
+  page: [html, markdown]
+  section: [html, rss, markdown]
 
 defaultContentLanguage: en
 languages:
