@@ -1,4 +1,11 @@
-body, .content {
-  font-family: "Spectral", serif!important;
+body,
+.content {
+  font-family: "Quattrocento", serif !important;
 }
 
+code,
+pre,
+kbd,
+samp {
+  font-family: monospace, ui-monospace;
+}

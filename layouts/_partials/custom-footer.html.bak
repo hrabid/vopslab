@@ -66,9 +66,9 @@
                 {{ else if or (eq $platform "mastodon") (eq $platform "discord") (eq $platform "slack") }}
                   {{ $url = $handle }}
                 {{ end }}
-
+                
                 {{ if $url }}
-                  <a href="{{ $url }}" target="_blank" rel="noopener{{ if eq $platform "mastodon" }} me{{ end }}"
+                  <a href="{{ $url }}" target="_blank" rel="noopener{{ if eq $platform "mastodon" }} me{{ end }}" 
                      aria-label="{{ $platform | title }}" title="{{ $platform | title }}">
                     {{ $icon | safeHTML }}
                   </a>
@@ -109,7 +109,7 @@
           &copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.
         </p>
         <p class="built-with">
-          Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>
+          Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 
           & <a href="https://github.com/imfing/hextra" target="_blank" rel="noopener">Hextra</a>
         </p>
       </div>
@@ -118,51 +118,29 @@
 </footer>
 
 <style>
-/*
-  Shape concept: the footer is a dark card that "lifts" over the page,
-  entering on a big swept corner (top-left) and settling into a tighter
-  radius on the right, the way the reference AWS footer does. Everything
-  else below keeps your original structure and content untouched.
-*/
 .custom-footer {
-  --footer-bg: #0a0e16;
-  --footer-heading: #f1f5f9;
-  --footer-text: #9aa5b1;
-  --footer-text-strong: #cbd5e1;
-  --footer-border: rgba(255, 255, 255, 0.08);
-  --footer-accent: var(--primary-color, #60a5fa);
-
-  position: relative;
-  background:
-    radial-gradient(ellipse 900px 500px at 0% 0%, rgba(96, 165, 250, 0.14), transparent 60%),
-    var(--footer-bg);
-  color: var(--footer-text);
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.05));
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 4rem;
-  padding: 4.5rem 0 1.75rem;
-  border-radius: clamp(48px, 9vw, 140px) clamp(20px, 3vw, 40px) 0 0;
-  box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.25);
+  padding: 3rem 0 1.5rem;
 }
 
-/* Dark mode already matches the card's own palette, so no separate
-   .dark overrides are needed here — the footer stays a fixed dark
-   surface regardless of the site theme, same as the reference. */
+.dark .custom-footer {
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.03));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-/* Give the first column extra breathing room from the swept corner */
-.footer-top > .footer-column:first-child {
-  padding-left: clamp(0px, 2vw, 1.5rem);
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Make social media column span wider to accommodate more icons */
@@ -174,6 +152,13 @@
   .footer-social-wide {
     grid-column: span 1;
   }
+}
+
+.footer-column h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color, #3b82f6);
 }
 
 .footer-branding {
@@ -190,35 +175,23 @@
 
 .footer-branding h3 {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--footer-heading);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.footer-branding h3::before {
-  content: "";
-  font-family: ui-monospace, "JetBrains Mono", monospace;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--footer-accent);
 }
 
 .footer-column h4 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  color: var(--footer-heading);
+  margin-bottom: 0.75rem;
+  color: inherit;
 }
 
 .footer-column p {
-  color: var(--footer-text);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin: 0;
+}
+
+.dark .footer-column p {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-links {
@@ -228,55 +201,70 @@
 }
 
 .footer-links li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links a {
-  color: var(--footer-text-strong);
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: var(--footer-accent);
+  color: var(--primary-color, #3b82f6);
+}
+
+.dark .footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .footer-links a:hover {
+  color: var(--primary-color, #60a5fa);
 }
 
 .social-links {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   max-width: 600px;
 }
 
 .social-links a {
-  color: var(--footer-text);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--footer-border);
+  color: rgba(0, 0, 0, 0.6);
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
+  width: 24px;
+  height: 24px;
 }
 
 .social-links a svg {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: currentColor;
 }
 
 .social-links a:hover {
-  color: var(--footer-accent);
-  border-color: var(--footer-accent);
-  background: rgba(96, 165, 250, 0.1);
+  color: var(--primary-color, #3b82f6);
   transform: translateY(-2px);
+}
+
+.dark .social-links a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .social-links a:hover {
+  color: var(--primary-color, #60a5fa);
 }
 
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 1px solid var(--footer-border);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom-content {
@@ -289,12 +277,16 @@
 
 .footer-bottom-content p {
   margin: 0;
-  color: var(--footer-text);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 0.875rem;
 }
 
+.dark .footer-bottom-content p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .footer-bottom-content a {
-  color: var(--footer-accent);
+  color: var(--primary-color, #3b82f6);
   text-decoration: none;
 }
 
@@ -303,24 +295,15 @@
 }
 
 @media (max-width: 768px) {
-  .custom-footer {
-    border-radius: 32px 32px 0 0;
-    padding-top: 3.5rem;
-  }
-
   .footer-top {
     grid-template-columns: 1fr;
   }
-
-  .footer-top > .footer-column:first-child {
-    padding-left: 0;
-  }
-
+  
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
   }
-
+  
   .social-links {
     max-width: 100%;
   }
