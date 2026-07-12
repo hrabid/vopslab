@@ -1,31 +1,108 @@
 {{/*
   Projects Grid Wrapper - Use this to wrap your project cards
-  
+
   Usage:
   {{< projects-grid >}}
     {{< project-card ... >}}
     {{< project-card ... >}}
   {{< /projects-grid >}}
+
+  Optional section header (mirrors the blog-list.html section header pattern):
+  {{< projects-grid title="Selected Work" eyebrow="ls ~/projects" >}}
+    ...
+  {{< /projects-grid >}}
+
+  Shares its --bp- design tokens with project-showcase.html, and pulls its
+  accent (teal), gold, and surface/border scale straight from blog-list.html's
+  --bl- tokens so projects and posts read as one system across the site.
 */}}
 
-<div class="pg-container">
-  {{ .Inner }}
+{{ $title := .Get "title" }}
+{{ $eyebrow := .Get "eyebrow" }}
+
+<div class="pg-section">
+  {{ if $title }}
+  <div class="pg-header">
+    {{ if $eyebrow }}
+    <p class="pg-terminal-line"><span class="pg-terminal-prompt">$</span>{{ $eyebrow }}</p>
+    {{ end }}
+    <h2 class="pg-title">{{ $title }}</h2>
+  </div>
+  {{ end }}
+
+  <div class="pg-container">
+    {{ .Inner }}
+  </div>
 </div>
 
 <style>
+:root {
+  --bp-ink: #0f172a;
+  --bp-muted: #475569;
+  --bp-border: #e2e8f0;
+  --bp-surface-hover: #f8fafc;
+  --bp-accent: #0d9488;
+  --bp-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.dark {
+  --bp-ink: #e7edf5;
+  --bp-muted: #9fb0c3;
+  --bp-border: #223049;
+  --bp-surface-hover: #17213a;
+  --bp-accent: #2dd4bf;
+}
+
+.pg-section {
+  width: 100%;
+  margin: 3rem 0;
+}
+
+.pg-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--bp-border);
+}
+
+.pg-terminal-line {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--bp-mono);
+  font-size: 0.8125rem;
+  color: var(--bp-muted);
+  background: var(--bp-surface-hover);
+  border: 1px solid var(--bp-border);
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.01em;
+}
+
+.pg-terminal-prompt {
+  color: var(--bp-accent);
+  font-weight: 700;
+  margin-right: 0.6em;
+}
+
+.pg-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--bp-ink);
+  margin: 0;
+}
+
 .pg-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
   width: 100%;
   max-width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .pg-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
+@media (max-width: 640px) {
+  .pg-title { font-size: 1.5rem; }
+  .pg-container { gap: 1.5rem; }
 }
 </style>

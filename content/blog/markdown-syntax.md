@@ -7,24 +7,26 @@ tags:
 title: Markdown Syntax
 summary: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by **John Gruber** in 2004, Markdown is now one of the world’s most popular markup languages.
 layout: "blog"
-authors: 
+authors:
   - name: "Abid"
     link: "https://github.com/hrabid"
     image: "/images/hrabid.jpg"
-image: "images/markdown-mark-white.png"
+image: "images/markdown.webp"
 sidebar:
   exclude: false
 toc: true
 featured: false
 comments: true
 ---
-![](/images/markdown-mark-white.png)
+
+![](/images/markdown.webp)
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by **John Gruber** in 2004, Markdown is now one of the world’s most popular markup languages. It is widely used for formatting readme files, writing messages in online discussion forums, and creating rich text using a plain text editor.
 
 This tutorial will cover everything you need to know about Markdown, from basic syntax to advanced features. Let's dive in!
 
 ---
+
 ## Basic Syntax
 
 ### Headings
@@ -33,10 +35,15 @@ Headings are created by adding one or more `#` symbols before the heading text. 
 
 ```markdown
 # Heading 1
+
 ## Heading 2
+
 ### Heading 3
+
 #### Heading 4
+
 ##### Heading 5
+
 ###### Heading 6
 ```
 
@@ -54,30 +61,34 @@ This is a new line in the same paragraph.
 ### Bold and Italic
 
 - **Bold**: Wrap text with `**` or `__`.
-- *Italic*: Wrap text with `*` or `_`.
+- _Italic_: Wrap text with `*` or `_`.
 
 ```markdown
 **This is bold text**  
-__This is also bold text__  
+**This is also bold text**
 
-*This is italic text*  
-_This is also italic text_  
+_This is italic text_  
+_This is also italic text_
 
 **_This is bold and italic text_**
 ```
+
 ### Underline
+
 Markdown doesn't have built-in syntax for underline, but it can be achieved by html `<u>` or `<ins>` tag.
+
 ```markdown
 <u>An underlined text</u>
 <ins>also an underlined text</ins>
 ```
+
 ### Blockquotes
 
 Blockquotes are created by adding a `>` before the text.
 
 ```markdown
 > This is a blockquote.
-> 
+>
 > This is another line in the blockquote.
 ```
 
@@ -92,8 +103,10 @@ Use `-`, `*`, or `+` to create unordered lists.
 - Item 2
   - Subitem 2.1
   - Subitem 2.2
+
 * Item 3
-+ Item 4
+
+- Item 4
 ```
 
 #### Ordered Lists
@@ -102,25 +115,23 @@ Use numbers followed by a period to create ordered lists.
 
 ```markdown
 8. First item
-9. Second item
-   10. Subitem 2.1
-   11. Subitem 2.2
-12. Third item
+9. Second item 10. Subitem 2.1 11. Subitem 2.2
+10. Third item
 ```
 
 ### Code
 
 - Inline code: Wrap text with `` ` ``.
-- Code blocks: Wrap text with ``` ``` ``` or indent with four spaces.
+- Code blocks: Wrap text with ` ` ``` or indent with four spaces.
 
 ```markdown
 This is `inline code`.
-
 ```
-This is a code block.
-```markdown
 
-	This is also a code block.
+This is a code block.
+
+```markdown
+    This is also a code block.
 ```
 
 ### Horizontal Rules
@@ -129,32 +140,41 @@ Create a horizontal rule by using three or more `-`, `*`, or `_` characters.
 
 ```markdown
 ---
-***
-___
+
+---
+
+---
 ```
 
 ### Files Links
+
 #### Link to a URL
+
 Create links using `[text](URL)`.
 
 ```markdown
 [Google](https://www.google.com)
 ```
-#### Link to a Heading 
+
+#### Link to a Heading
+
 ```markdown
 [[#Basic Syntax]]
 [[Markdown links#Links]]
 ```
 
 #### Link to heading of another file
+
 ```markdown
 [[anatomy-of-git-dir#`.git/COMMIT_EDITMSG`]]
 ```
 
 #### Embedding a file
+
 ```markdown
 [[public/fontawesome-6/svgs/brands/markdown.svg]]
 ```
+
 #### Images
 
 Add images using `![alt text](image URL)`.
@@ -173,7 +193,7 @@ Create tables using `|` and `-`.
 
 ```markdown
 | Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Row 1    | Data 1   | Data 2   |
 | Row 2    | Data 3   | Data 4   |
 ```
@@ -203,6 +223,7 @@ Use `:emoji_name:` to add emojis.
 ```markdown
 :smile: :heart: :rocket:
 ```
+
 ### Footnotes
 
 Add footnotes using `[^label]` and define them at the bottom of the document.
@@ -231,41 +252,55 @@ This is ==highlighted text==.
 H~2~O  
 E = mc^2^
 ```
+
 HTML subscript & superscript tag also supported:
+
 ```markdown
 H<sub>2</sub>O
 E = mc<sup>2</sup>
 ```
+
 ### Expandable & Collapsible Sections
+
 ```markdown
 <details>
   <summary>Click to expand</summary>
 
-  Hidden content goes here.
+Hidden content goes here.
+
 </details>
 ```
 
 ---
+
 ## GFM (Github Flavoured Markdown)
-### Note 
+
+### Note
+
 ```markdown
 > [!Note]
 > A Note
 ```
-### Caution 
+
+### Caution
+
 ```markdown
 > [!Caution]
 > This is a caution
 ```
+
 ### Tip
+
 ```markdown
 > [!Tip]
 > This is a Tip
 ```
-### Important 
+
+### Important
+
 ```markdown
 > [!Important]
-> This is a important note 
+> This is a important note
 ```
 
 ---
@@ -289,4 +324,3 @@ Here are some popular Markdown editors and tools:
 2. **Use Consistent Formatting**: Stick to one style for headings, lists, and other elements.
 3. **Preview Your Work**: Always preview your Markdown to ensure it renders correctly.
 4. **Use Comments Sparingly**: Markdown doesn’t support comments, but some processors allow HTML comments (`<!-- comment -->`).
-

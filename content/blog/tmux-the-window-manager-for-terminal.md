@@ -1,14 +1,14 @@
 ---
-date: '2026-02-08T17:59:12Z'
+date: "2026-02-08T17:59:12Z"
 draft: false
-title: 'Tmux, the Window Manager for Terminal'
-tags: 
+title: "Tmux, the Window Manager for Terminal"
+tags:
   - tmux
   - wm
 cascade:
   type: blog
   params:
-    reversePagination: false 
+    reversePagination: false
 authors:
   - name: "Abid"
     image: "/images/hrabid.jpg"
@@ -16,23 +16,32 @@ authors:
 comments: true
 featured: true
 summary: "tmux, terminal multiplexer. tmux multiplex terminal into panes, windows withing a single terminal window."
+image: "images/tmux.png"
 ---
+
+![](/images/tmux.png)
+
 # Tmux, the Window Manager for Terminal
-tmux, a terminal multiplexer. tmux multiplex terminal into panes, windows withing a single terminal window. 
+
+tmux, a terminal multiplexer. tmux multiplex terminal into panes, windows withing a single terminal window.
+
 ## tmux terminologies
+
 Some tmux terminologies that seems confusing but they can be described as umbrella concept:
 
-- Session: can contains multiple windows/group of windows 
+- Session: can contains multiple windows/group of windows
 - Window: can contains multiple panes/group of panes
 - Pane: the vertical or horizontal split in a window
 
 ## Keybindings
+
 Keybindings can be listed using this command:
+
 ```bash
-# command 
+# command
 tmux lsk -N
 
-# output 
+# output
 C-b Space   Select next layout
 C-b !       Break pane to a new window
 C-b "       Split window vertically
@@ -121,14 +130,20 @@ C-b S-Down  Move the visible part of the window down
 C-b S-Left  Move the visible part of the window left
 C-b S-Right Move the visible part of the window right
 ```
+
 ## Configuration
+
 Configuration file for tmux is `~/.tmux.conf`, but any file can be configuration file but have to source in the `~/.tmux.conf`.
-## Customization 
-Philosophy: 
+
+## Customization
+
+Philosophy:
+
 - Don't alter the default Keybindings
-- There is no tpm, tmux plugin manager, plugins I use, It just add more distruction & load time. 
-- I like the ui customization but also don't like to maintain it often. So, I stick with this this ui for a while. 
-Here's what is use as my configuration: 
+- There is no tpm, tmux plugin manager, plugins I use, It just add more distruction & load time.
+- I like the ui customization but also don't like to maintain it often. So, I stick with this this ui for a while.
+  Here's what is use as my configuration:
+
 ```conf
 ##### REQUIREMENTS #####
 # Nerd Font required for arrows & icons
@@ -238,6 +253,8 @@ set -g mode-style "bg=#{@tc},fg=#{@g4}"
 set -g window-style "bg=default"
 set -g window-active-style "bg=default"
 ```
-## Showcase 
+
+## Showcase
+
 The ui now look like this:
 ![](/images/tmux-ss.jpg)

@@ -16,7 +16,10 @@ authors:
 comments: true
 featured: true
 summary: "a low-level font configuration & customization library for unix-like operating system."
+image: "images/fontconfig.png"
 ---
+
+![](/images/fontconfig.png)
 
 ## fontconfig
 

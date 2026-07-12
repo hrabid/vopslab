@@ -1,15 +1,16 @@
 ---
-date: '2026-01-26T16:58:44Z'
+date: "2026-01-26T16:58:44Z"
 draft: false
-title: 'vOps Labs'
+title: "vOps Labs"
 layout: hextra-home
 ---
+
 {{< hextra/hero-section heading="h1" >}}
- Explore DevOps, Cloud, Linux & Computer Security.
+Explore DevOps, Cloud, Linux & Computer Security.
 {{< /hextra/hero-section >}}
 
 {{< hextra/hero-subtitle style="margin-bottom: 2rem; display: block;" >}}
-  Sharing the journey of exploring modern infrastructure and always questioning how it works.
+Sharing the journey of exploring modern infrastructure and always questioning how it works.
 {{< /hextra/hero-subtitle >}}
 
 <!--
@@ -19,15 +20,15 @@ layout: hextra-home
     placeholder="Enter your email..."
     button_text="Subscribe"
 >}}
---> 
+-->
 
 {{< glowline >}}
 {{< blog-list >}}
 {{< glowline >}}
 
 <!--
-{{< newsletter 
-    listmonk_url="https://your-listmonk-instance.com" 
+{{< newsletter
+    listmonk_url="https://your-listmonk-instance.com"
     list_uuid="your-list-uuid-here"
     title="Stay in the Loop"
     description="Get weekly updates about our latest posts and projects."
@@ -36,5 +37,3 @@ layout: hextra-home
     terms_url="/terms"
 >}}
 -->
-
-

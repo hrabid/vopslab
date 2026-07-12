@@ -1,13 +1,13 @@
 ---
-date: '2026-02-08T14:22:57Z'
+date: "2026-02-08T14:22:57Z"
 draft: false
-title: 'Flags vs Options'
-tags: 
-  - 
+title: "Flags vs Options"
+tags:
+  -
 cascade:
   type: blog
   params:
-    reversePagination: false 
+    reversePagination: false
 authors:
   - name: "Abid"
     image: "/images/hrabid.jpg"
@@ -15,9 +15,13 @@ authors:
 comments: true
 featured: true
 summary: "As command line folks we often face flag and option. Let's demestify the differences."
+image: "images/flags-options.png"
 ---
 
+![](/images/flags-options.png)
+
 ## _Flags_
+
 Flags are work like boolean value. By adding a flag, a feature is enabled or disabled.
 
 **Flags don't take any value**,
@@ -26,6 +30,7 @@ Flags are work like boolean value. By adding a flag, a feature is enabled or dis
 Like `-a` flag with `ls` command lists all files & directories including hidden ones. `-a` enables the feature of listing hidden files & directories.
 
 ## _Options_
+
 Basically options are long (can be short sometime). Generally Options take a value & change the behaviour of command according to the value.
 
 **Option takes a value**,
@@ -36,4 +41,3 @@ fzf --preview='cat {}'
 ```
 
 The `--preview` option take `cat` as value and change behaviour accordingly.
-
