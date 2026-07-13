@@ -1,18 +1,19 @@
 ---
-date: '{{ .Date }}'
+date: "{{ .Date }}"
 draft: true
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-tags: 
-  - 
+tags:
+  -
 cascade:
   type: blog
   params:
-    reversePagination: false 
+    reversePagination: false
 authors:
   - name: ""
     image: ""
     link: ""
-comments: true
-featured: 
 summary:
+featured:
+comments: true
+image: ""
 ---

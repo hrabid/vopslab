@@ -164,6 +164,23 @@ html.dark .blog-listing {
   height: 240px;
 }
 
+/* Gradient scrim that blends the image into the text content below */
+.blog-card-image::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--bl-surface) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.featured-card .blog-card-image::after {
+  height: 92px;
+}
+
 .blog-card-image img {
   width: 100%;
   height: 100%;
@@ -218,8 +235,18 @@ html.dark .blog-listing {
 }
 
 .blog-card-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.75rem;
   color: var(--bl-text-muted);
+}
+
+.blog-card-date svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  opacity: 0.8;
 }
 
 .blog-card-category {
@@ -293,9 +320,42 @@ html.dark .blog-listing {
   border-top: 1px solid var(--bl-border);
 }
 
+.blog-card-authors {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
 .blog-card-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.8125rem;
   color: var(--bl-text-muted);
+  text-decoration: none;
+  max-width: 100%;
+}
+
+a.blog-card-author:hover {
+  color: var(--bl-accent);
+}
+
+.blog-card-author-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--bl-border);
+  background: var(--bl-surface-hover);
+}
+
+.blog-card-author-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .blog-card-readmore {
@@ -306,6 +366,8 @@ html.dark .blog-listing {
   font-weight: 600;
   font-size: 0.875rem;
   text-decoration: none;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .blog-card-readmore::after {
@@ -455,13 +517,14 @@ html.dark .blog-listing {
         {{ if .Params.image }}
         <div class="blog-card-image">
           <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-          <span class="featured-badge">Featured</span>
+          <!-- <span class="featured-badge">Featured</span> -->
         </div>
         {{ end }}
 
         <div class="blog-card-content">
           <div class="blog-card-meta">
             <time class="blog-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               {{ .Date.Format "Jan 2, 2006" }}
             </time>
             {{ with .Params.category }}
@@ -482,8 +545,18 @@ html.dark .blog-listing {
           </p>
 
           <div class="blog-card-footer">
-            {{ with .Params.author }}
-            <span class="blog-card-author">{{ . }}</span>
+            {{ with .Params.authors }}
+            <div class="blog-card-authors">
+              {{ range . }}
+              {{ $name := .name }}
+              {{ $link := .link }}
+              {{ $image := .image }}
+              {{ if $link }}<a href="{{ $link }}" class="blog-card-author" target="_blank" rel="noopener noreferrer">{{ else }}<span class="blog-card-author">{{ end }}
+                {{ if $image }}<img src="{{ $image }}" alt="{{ $name }}" class="blog-card-author-avatar" loading="lazy">{{ end }}
+                <span class="blog-card-author-name">{{ $name }}</span>
+              {{ if $link }}</a>{{ else }}</span>{{ end }}
+              {{ end }}
+            </div>
             {{ end }}
             <a href="{{ .RelPermalink }}" class="blog-card-readmore">Read more</a>
           </div>
@@ -522,6 +595,7 @@ html.dark .blog-listing {
         <div class="blog-card-content">
           <div class="blog-card-meta">
             <time class="blog-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               {{ .Date.Format "Jan 2, 2006" }}
             </time>
             {{ with .Params.category }}
@@ -542,8 +616,18 @@ html.dark .blog-listing {
           </p>
 
           <div class="blog-card-footer">
-            {{ with .Params.author }}
-            <span class="blog-card-author">{{ . }}</span>
+            {{ with .Params.authors }}
+            <div class="blog-card-authors">
+              {{ range . }}
+              {{ $name := .name }}
+              {{ $link := .link }}
+              {{ $image := .image }}
+              {{ if $link }}<a href="{{ $link }}" class="blog-card-author" target="_blank" rel="noopener noreferrer">{{ else }}<span class="blog-card-author">{{ end }}
+                {{ if $image }}<img src="{{ $image }}" alt="{{ $name }}" class="blog-card-author-avatar" loading="lazy">{{ end }}
+                <span class="blog-card-author-name">{{ $name }}</span>
+              {{ if $link }}</a>{{ else }}</span>{{ end }}
+              {{ end }}
+            </div>
             {{ end }}
             <a href="{{ .RelPermalink }}" class="blog-card-readmore">Read more</a>
           </div>

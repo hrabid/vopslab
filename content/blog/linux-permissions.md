@@ -1,50 +1,65 @@
 ---
-date: '2026-02-08T13:55:13Z'
+date: "2026-02-08T13:55:13Z"
 draft: false
-title: 'Linux Permissions'
-tags: 
+title: "Linux Permissions"
+tags:
   - permission
   - linux
 cascade:
   type: blog
   params:
-    reversePagination: false 
+    reversePagination: false
 authors:
   - name: "Abid"
     image: "/images/hrabid.jpg"
     link: "github.com/hrabid"
 comments: true
-featured: false 
+featured: false
 summary: "Linux file permissions"
+image: "images/linux-permissions.png"
 ---
 
+![](/images/linux-permissions.png)
+
 ## Permissions : Read, Write, Execute
-###  `r` (Read) Permission: 
+
+### `r` (Read) Permission:
+
 with `r` permission user can:
+
 - View the content of a file
-- List the contents of a directory 
+- List the contents of a directory
+
 ### `w` (Write) Permission:
+
 with `w` permission user can:
-- Modify a file 
-- Create, rename, delete file or dir within a directory 
-### `x` (Execute) permission: 
+
+- Modify a file
+- Create, rename, delete file or dir within a directory
+
+### `x` (Execute) permission:
+
 with `x` permission user can :
-- Execute a file as script 
-- Can enter in a directory 
+
+- Execute a file as script
+- Can enter in a directory
 
 ## Permission Category : User, Group, Others
-### `u` for User 
 
-The files owner 
+### `u` for User
+
+The files owner
+
 ### `g` for Group
 
-The group associated with the file or 
+The group associated with the file or
 
-### `o` for Others 
+### `o` for Others
 
 Everyone Else on the planet.
 
 ## Interpreting Permission String
+
 When you list files with `ls -l`, you’ll see something like this:
 
 `-rwxr-xr-- 1 alice developers 4096 Apr 4 14:00 script.sh`
@@ -63,32 +78,44 @@ Let’s dissect it:
 - `script.sh` – File name
 
 ## File Ownership : User & Group
-Files in linux associated with a 
+
+Files in linux associated with a
+
 - an owner of the file
 - a group
-_By default: 
-- Who (user) create  a file is the owner of the file 
+  \_By default:
+- Who (user) create a file is the owner of the file
 - The file is assigned to the primary group of the user (who created the file)
 
 ## Changing Permissions
+
 Linux has a command for changing permissions & it is `chmod`.
+
 ### Symbolic Mode
+
 Uses Symbols (letter & symbols) as permissions & permission Category
 
 #### Permissions
+
 - `r` : read
 - `w` : write
-- `x` :  Execute 
+- `x` : Execute
+
 #### Permission Category
+
 - `u` : user
 - `g` : group
-- `o` : Others 
-- `a` : All 
+- `o` : Others
+- `a` : All
+
 #### Permission Operator
-- `+` : Add Permission 
-- `-` : Remove Permission 
+
+- `+` : Add Permission
+- `-` : Remove Permission
 - `=` : Assign Exact Permission
-### Numeric Mode 
+
+### Numeric Mode
+
 This mode uses **octal values** to represent permission bits:
 
 | Permission | Octal | Binary | Description           |
@@ -110,29 +137,36 @@ You sum these for each category:
 - `4` = `r--`
 
 ### Commands
+
 ```bash
 chmod ugo+rwx filename
 chmod 777 filename
 ```
 
 ## Changing Ownership & Group
-Using `chown` & `chgrp` 
 
-### Ownership 
-Changing ownership 
+Using `chown` & `chgrp`
+
+### Ownership
+
+Changing ownership
+
 ```shell
 chown newuser filename
 ```
 
-### Group 
-Changing Group 
+### Group
+
+Changing Group
+
 ```shell
-chgrp newgroup filename 
+chgrp newgroup filename
 ```
 
-### Ownership & Group 
-Changing both ownership & group 
+### Ownership & Group
+
+Changing both ownership & group
+
 ```shell
 chown newuser:newgroup filename
 ```
-

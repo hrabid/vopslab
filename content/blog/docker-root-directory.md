@@ -16,10 +16,10 @@ authors:
     image: "/images/hrabid.jpg"
 featured: true
 comments: true
-image: "images/docker.webp"
+image: "images/docker-root-data.png"
 ---
 
-![](/images/docker.webp)
+![](/images/docker-root-data.png)
 
 By default docker stores all of it's data in `/var/lib/docker/`. So the root directory gets busy. To keep root directory being filled up we can move the docker's `--data-root` into somewhere else.
 
