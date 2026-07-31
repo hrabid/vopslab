@@ -140,7 +140,6 @@ Create a horizontal rule by using three or more `-`, `*`, or `_` characters.
 
 ```markdown
 ---
-
 ---
 
 ---
